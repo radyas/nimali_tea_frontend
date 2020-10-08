@@ -3,7 +3,10 @@ import { NbMenuItem } from '@nebular/theme';
 export const MENU_ITEMS: NbMenuItem[] = [
   {
     title: 'Home',
-    icon: 'home-outline',
+    icon: {
+      icon: 'home',
+      pack: 'font-awesome',
+    },
     link: '/home',
     home: true,
   },
@@ -13,7 +16,27 @@ export const MENU_ITEMS: NbMenuItem[] = [
   // },
   {
     title: 'Manage Employee',
-    icon: 'person-outline',
+    icon: {
+      icon: 'user',
+      pack: 'font-awesome',
+    },
+    children: [
+      {
+        title: 'Add Employee',
+        link: '/employee/add',
+      },
+      {
+        title: 'View Employees',
+        link: '/employee/view',
+      },
+    ],
+  },
+  {
+    title: 'Manage Department',
+    icon: {
+      icon: 'building',
+      pack: 'font-awesome',
+    },
     children: [
       {
         title: 'Add Employee',
