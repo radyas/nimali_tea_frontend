@@ -1,0 +1,126 @@
+<nb-card>
+  <nb-card-body>
+    <h1 align="center">Employee Salary</h1>
+    <form>
+      <fieldset>
+        <legend>Salary Details</legend>
+        <br>
+        <fieldset>
+          <legend>Details</legend>
+          <br>
+          <div class="row">
+            <div class="col-4">
+              ID
+            </div>
+            <div class="col-6">
+              <select id="id" name="id">
+                <option value="001">001</option>
+                <option value="002">002</option>
+                <option value="003">003</option>
+                <option value="004">004</option>
+              </select>
+            </div>
+          </div>
+          <br>
+          <div class="row">
+            <div class="col-4">
+              Month
+            </div>
+            <div class="col-6">
+              <input type="text" id="month" pattern="[1-12]"/>
+            </div>
+          </div>
+          <br>
+          <div class="row">
+            <div class="col-4">
+              Issue Date
+            </div>
+            <div class="col-6">
+              <input type="date" id="date" readonly/>
+            </div>
+          </div>
+          <br>
+          <div class="row">
+            <div class="col-4">
+              Basic Salary
+            </div>
+            <div class="col-6">
+              <input type="text" id="basic" readonly/>
+            </div>
+          </div>
+          <br>
+          <br>
+          <div class="row center">
+            <button>Calculate</button>
+          </div>
+          <br>
+        </fieldset>
+        <br>
+        <div class="row">
+          <div class="col-6">
+            <fieldset>
+              <legend>Additions</legend>
+              <br>
+              <div class="row">
+                Details of the additions related to the selected month are displayed as a list.
+              </div>
+              <br>
+              <div class="row">
+                <div class="col-4">
+                  Total Additions
+                </div>
+                <div class="col-6">
+                  <input type="text" id="addition" readonly/>
+                </div>
+                <br>
+              </div>
+            </fieldset>
+          </div>
+          <div class="col-6">
+            <fieldset>
+              <legend>Deductions</legend>
+              <br>
+              <div class="row">
+                Details of the deductions related to the selected month are displayed as a list.
+              </div>
+              <br>
+              <div class="row">
+                <div class="col-4">
+                  Total Deductions
+                </div>
+                <div class="col-6">
+                  <input type="text" id="deduction" readonly/>
+                </div>
+                <br>
+              </div>
+            </fieldset>
+          </div>
+          <br>
+        </div>
+        <br>
+        <fieldset>
+          <legend>Total</legend>
+          <br>
+          <div class="row">
+            <div class="col-4">
+              Net Salary
+            </div>
+            <div class="col-4">
+              <input type="text" id="salary" readonly/>
+            </div>
+          </div>
+        </fieldset>
+        <br>
+        <div class="row center">
+          <div class="col-1">
+            <input type="submit" id="submit" value="submit">
+          </div>
+          <div class="col-1">
+            <input type="reset" id="reset" value="reset">
+          </div>
+        </div>
+        <br>
+      </fieldset>
+    </form>
+  </nb-card-body>
+</nb-card>
