@@ -11,5 +11,5 @@ export class AddOrdersComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
+  selectedItem = '2';
 }

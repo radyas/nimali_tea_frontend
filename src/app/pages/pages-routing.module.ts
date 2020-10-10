@@ -18,6 +18,18 @@ const routes: Routes = [{
         .then(m => m.EmployeeModule),
     },
     {
+      path: 'customer',
+      loadChildren: () => import('./customer/customer.module')
+        .then(m => m.CustomerModule),
+
+    },
+    {
+      path: 'orders',
+      loadChildren: () => import('./orders/orders.module')
+        .then(m => m.OrdersModule),
+
+    },
+    {
       path: '',
       redirectTo: 'home',
       pathMatch: 'full',

@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { NbMenuModule } from '@nebular/theme';
+import { NbMenuModule, NbDatepickerModule } from '@nebular/theme';
 
 import { ThemeModule } from '../@theme/theme.module';
 import { PagesComponent } from './pages.component';
@@ -36,6 +36,7 @@ import {VoucherModule} from './voucher/voucher.module';
     ReportsModule,
     SalaryModule,
     VoucherModule,
+    NbDatepickerModule.forRoot(),
   ],
   declarations: [
     PagesComponent,
@@ -43,3 +44,4 @@ import {VoucherModule} from './voucher/voucher.module';
 })
 export class PagesModule {
 }
+export class AppModule { }
