@@ -39,7 +39,7 @@ export const MENU_ITEMS: NbMenuItem[] = [
     },
     children: [
       {
-        title: 'Add Attendance',
+        title: 'Mark Attendance',
         link: '/attendance/add',
       },
       {

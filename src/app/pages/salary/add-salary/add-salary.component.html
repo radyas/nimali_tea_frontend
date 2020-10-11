@@ -1,126 +1,97 @@
-<nb-card>
-  <nb-card-body>
-    <h1 align="center">Employee Salary</h1>
-    <form>
-      <fieldset>
-        <legend>Salary Details</legend>
-        <br>
-        <fieldset>
-          <legend>Details</legend>
-          <br>
-          <div class="row">
-            <div class="col-4">
-              ID
-            </div>
-            <div class="col-6">
-              <select id="id" name="id">
-                <option value="001">001</option>
-                <option value="002">002</option>
-                <option value="003">003</option>
-                <option value="004">004</option>
-              </select>
-            </div>
-          </div>
-          <br>
-          <div class="row">
-            <div class="col-4">
-              Month
-            </div>
-            <div class="col-6">
-              <input type="text" id="month" pattern="[1-12]"/>
-            </div>
-          </div>
-          <br>
-          <div class="row">
-            <div class="col-4">
-              Issue Date
-            </div>
-            <div class="col-6">
-              <input type="date" id="date" readonly/>
-            </div>
-          </div>
-          <br>
-          <div class="row">
-            <div class="col-4">
-              Basic Salary
-            </div>
-            <div class="col-6">
-              <input type="text" id="basic" readonly/>
-            </div>
-          </div>
-          <br>
-          <br>
-          <div class="row center">
-            <button>Calculate</button>
-          </div>
-          <br>
-        </fieldset>
-        <br>
-        <div class="row">
-          <div class="col-6">
-            <fieldset>
-              <legend>Additions</legend>
-              <br>
-              <div class="row">
-                Details of the additions related to the selected month are displayed as a list.
+<div class="row justify-content-center">
+  <div class="col-md-11">
+    <nb-card>
+      <nb-card-header>Add Salary</nb-card-header>
+      <nb-card-body>
+        <form class="form-horizontal">
+          <fieldset>
+            <legend>Details</legend>
+            <br>
+            <div class="form-group row">
+              <label for="id" class="label col-sm-3 form-control-label">ID</label>
+              <div class="col-sm-9">
+                <nb-select id="id" placeholder="Select ID" [(selected)]="selectedItem">
+                  <nb-option value="0">0</nb-option>
+                  <nb-option value="1">1</nb-option>
+                  <nb-option value="2">2</nb-option>
+                  <nb-option value="3">2</nb-option>
+                  <nb-option value="4">4</nb-option>
+                </nb-select>
               </div>
-              <br>
-              <div class="row">
-                <div class="col-4">
-                  Total Additions
-                </div>
-                <div class="col-6">
-                  <input type="text" id="addition" readonly/>
-                </div>
+            </div>
+            <div class="form-group row">
+              <label for="month" class="label col-sm-3 form-control-label">Month</label>
+              <div class="col-sm-9">
+                <input type="text" nbInput fullWidth id="month" placeholder="Month">
+              </div>
+            </div>
+            <div class="form-group row">
+              <label for="date" class="label col-sm-3 form-control-label">Date</label>
+              <div class="col-sm-9">
+                <input nbInput id="date" placeholder="Date" [nbDatepicker]="dateTimePicker">
+                <nb-datepicker #dateTimePicker></nb-datepicker>
+              </div>
+            </div>
+            <div class="form-group row">
+              <label for="basicsal" class="label col-sm-3 form-control-label">Basic Salary</label>
+              <div class="col-sm-9">
+                <input type="text" nbInput fullWidth id="basicsal" placeholder="BasicSalary" readonly>
+              </div>
+            </div>
+            <div class="form-group row">
+              <div class="col-md-3 offset-md-3"></div>
+              <div class="col-md-3 offset-md-3">
+                <button nbButton hero status="success">Calculate</button>
+              </div>
+            </div>
+          </fieldset>
+          <div class="form-group row">
+            <div class="col-6">
+              <fieldset>
+                <legend>Additions</legend>
                 <br>
-              </div>
-            </fieldset>
-          </div>
-          <div class="col-6">
-            <fieldset>
-              <legend>Deductions</legend>
-              <br>
-              <div class="row">
-                Details of the deductions related to the selected month are displayed as a list.
-              </div>
-              <br>
-              <div class="row">
-                <div class="col-4">
-                  Total Deductions
+                <div class="form-group row">
+                  <label for="addition" class="label col-sm-3 form-control-label">Total Additions</label>
+                  <div class="col-sm-9">
+                    <input type="text" nbInput fullWidth id="addition" placeholder="Additions" readonly>
+                  </div>
                 </div>
-                <div class="col-6">
-                  <input type="text" id="deduction" readonly/>
-                </div>
+              </fieldset>
+            </div>
+            <div class="col-6">
+              <fieldset>
+                <legend>Deductions</legend>
                 <br>
-              </div>
-            </fieldset>
+                <div class="form-group row">
+                  <label for="deduction" class="label col-sm-3 form-control-label">Total Deductions</label>
+                  <div class="col-sm-9">
+                    <input type="text" nbInput fullWidth id="deduction" placeholder="Deductions" readonly>
+                  </div>
+                </div>
+              </fieldset>
+            </div>
           </div>
-          <br>
-        </div>
-        <br>
-        <fieldset>
-          <legend>Total</legend>
+          <fieldset>
+            <legend>Total</legend>
+            <br>
+            <div class="form-group row">
+              <label for="salary" class="label col-sm-3 form-control-label">Total Salary</label>
+              <div class="col-sm-9">
+                <input type="text" nbInput fullWidth id="salary" placeholder="Salary" readonly>
+              </div>
+            </div>
+          </fieldset>
           <br>
           <div class="row">
-            <div class="col-4">
-              Net Salary
+            <div class="col-md-3 offset-md-3">
+              <button nbButton hero status="success">Submit</button>
             </div>
-            <div class="col-4">
-              <input type="text" id="salary" readonly/>
+            <div class="col-md-3 offset-md-3">
+              <button nbButton hero status="warning">Cancel</button>
             </div>
           </div>
-        </fieldset>
-        <br>
-        <div class="row center">
-          <div class="col-1">
-            <input type="submit" id="submit" value="submit">
-          </div>
-          <div class="col-1">
-            <input type="reset" id="reset" value="reset">
-          </div>
-        </div>
-        <br>
-      </fieldset>
-    </form>
-  </nb-card-body>
-</nb-card>
+        </form>
+      </nb-card-body>
+    </nb-card>
+  </div>
+</div>

@@ -1,72 +1,61 @@
-<nb-card>
-  <nb-card-body>
-    <h1 align="center">Adjustments</h1>
-    <form>
-      <fieldset>
-        <legend>Adjustment Details</legend>
-        <br>
-        <div class="row">
-          <div class="col-4">
-            ID
+<div class="row justify-content-center">
+  <div class="col-md-8">
+    <nb-card>
+      <nb-card-header>Add Adjustments</nb-card-header>
+      <nb-card-body>
+        <form class="form-horizontal">
+          <br>
+          <div class="form-group row">
+            <label for="id" class="label col-sm-3 form-control-label">ID</label>
+            <div class="col-sm-9">
+              <nb-select id="id" placeholder="Select ID" [(selected)]="selectedItem">
+                <nb-option value="0">0</nb-option>
+                <nb-option value="1">1</nb-option>
+                <nb-option value="2">2</nb-option>
+                <nb-option value="3">2</nb-option>
+                <nb-option value="4">4</nb-option>
+              </nb-select>
+            </div>
           </div>
-          <div class="col-6">
-            <select id="id" name="id">
-              <option value="001">001</option>
-              <option value="002">002</option>
-              <option value="003">003</option>
-              <option value="004">004</option>
-            </select>
+          <div class="form-group row">
+            <label for="description" class="label col-sm-3 form-control-label">Description</label>
+            <div class="col-sm-9">
+              <input type="text" nbInput fullWidth id="description" placeholder="Description">
+            </div>
           </div>
-        </div>
-        <br>
-        <div class="row">
-          <div class="col-4">
-            Description
+          <div class="form-group row">
+            <label for="date" class="label col-sm-3 form-control-label">Date</label>
+            <div class="col-sm-9">
+              <input nbInput id="date" placeholder="Date" [nbDatepicker]="dateTimePicker">
+              <nb-datepicker #dateTimePicker></nb-datepicker>
+            </div>
           </div>
-          <div class="col-6">
-            <input type="text" id="description" required/>
+          <div class="form-group row">
+            <label for="amount" class="label col-sm-3 form-control-label">Amount</label>
+            <div class="col-sm-9">
+              <input type="text" nbInput fullWidth id="amount" placeholder="Amount">
+            </div>
           </div>
-        </div>
-        <br>
-        <div class="row">
-          <div class="col-4">
-            Date
+          <div class="form-group row">
+            <label for="type" class="label col-sm-3 form-control-label">Type</label>
+            <div class="col-sm-9">
+              <nb-select id="type" placeholder="Select Type" [(selected)]="selectedItem">
+                <nb-option value="addition">Addition</nb-option>
+                <nb-option value="deduction">Deduction</nb-option>
+              </nb-select>
+            </div>
           </div>
-          <div class="col-6">
-            <input type="date" id="date" required/>
+          <br>
+          <div class="row">
+            <div class="col-md-3 offset-md-3">
+              <button nbButton hero status="success">Submit</button>
+            </div>
+            <div class="col-md-3 offset-md-3">
+              <button nbButton hero status="warning">Cancel</button>
+            </div>
           </div>
-        </div>
-        <br>
-        <div class="row">
-          <div class="col-4">
-            Amount
-          </div>
-          <div class="col-6">
-            <input type="text" id="amount" required/>
-          </div>
-        </div>
-        <br>
-        <div class="row">
-          <div class="col-4">
-            Type
-          </div>
-          <div class="col-6">
-            <select id="type" name="type">
-              <option value="addition">Addition</option>
-              <option value="deduction">Deduction</option>
-            </select></div>
-        </div>
-        <br>
-        <div class="row center">
-          <div class="col-1">
-            <input type="submit" id="submit" value="submit">
-          </div>
-          <div class="col-1">
-            <input type="reset" id="reset" value="reset">
-          </div>
-        </div>
-        <br>
-      </fieldset>
-    </form>
-  </nb-card-body>
-</nb-card>
+        </form>
+      </nb-card-body>
+    </nb-card>
+  </div>
+</div>

@@ -1,6 +1,6 @@
 import { Observable } from 'rxjs';
 
-export interface Group{
+export interface Group {
   url: string;
   id: number;
   name: string;
