@@ -1,1 +1,63 @@
-<p>add-orders works!</p>
+<div class="row justify-content-center">
+    <div class="col-md-8">
+      <nb-card>
+        <nb-card-header>Add Order Details</nb-card-header>
+        <nb-card-body>
+          <form class="form-horizontal">
+            <div class="form-group row">
+                <label for="inputpid3" class="label col-sm-3 form-control-label">Product ID</label>
+                <div class="col-sm-9">
+                  <input type="pid" nbInput fullWidth id="inputpid3" placeholder="product id">
+                </div>
+              </div>
+              <div class="form-group row">
+                <label for="inputcid3" class="label col-sm-3 form-control-label">Customer ID</label>
+                <div class="col-sm-9">
+                    <input type="cid" nbInput fullWidth id="inputcid3" placeholder="customer id">   
+                </div>
+              </div>
+              <div class="form-group row">
+                <label for="inputAddress" class="label col-sm-3 form-control-label">Brand</label>
+                <div class="col-sm-9">
+                    <nb-select placeholder="Select Brand" [(selected)]="selectedItem">
+                        <nb-option value="">Brand A</nb-option>
+                        <nb-option value="0">Brand B</nb-option>
+                        <nb-option value="1">Brand C</nb-option>
+                        <nb-option value="2">Brand D</nb-option>
+                        <nb-option value="3">Brand E</nb-option>
+                    </nb-select>
+                </div>
+              </div>
+              <div class="form-group row">
+                <label for="inputPhone3" class="label col-sm-3 form-control-label">Weight</label>
+                <div class="col-sm-9">
+                  <input type="phone" nbInput fullWidth id="inputPhone3" placeholder="weight">
+                </div>
+              </div>
+            <div class="form-group row">
+              <label for="inputEmail3" class="label col-sm-3 form-control-label">Date</label>
+              <div class="col-sm-9">
+                <input nbInput placeholder="Pick Date" [nbDatepicker]="dateTimePicker">
+                <nb-datepicker #dateTimePicker></nb-datepicker>
+              </div>
+            </div>
+            <div class="form-group row">
+                <label for="inputEmail3" class="label col-sm-3 form-control-label">Shipping Address</label>
+                <div class="col-sm-9">
+                  <input type="email" nbInput fullWidth id="inputEmail3" placeholder="shipping address">
+                </div>
+              </div>
+            
+            <div class="row">
+              <div class="col-md-3 offset-md-3">
+                <button nbButton hero status="success">Submit</button>
+              </div>
+              <div class="col-md-3 offset-md-3">
+                 <button nbButton hero status="warning">Cancel</button>
+              </div>
+            </div>
+          </form>
+        </nb-card-body>
+      </nb-card>
+    </div>
+  </div>

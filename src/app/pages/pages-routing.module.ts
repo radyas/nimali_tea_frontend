@@ -1,5 +1,6 @@
 import { RouterModule, Routes } from '@angular/router';
 import { NgModule } from '@angular/core';
+
 import { PagesComponent } from './pages.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 
@@ -17,14 +18,20 @@ const routes: Routes = [{
         .then(m => m.EmployeeModule),
     },
     {
-      path : 'salary',
-      loadChildren: () => import('./salary/salary.module')
-        .then(m => m.SalaryModule),
+      path: 'customer',
+      loadChildren: () => import('./customer/customer.module')
+        .then(m => m.CustomerModule),
+
     },
     {
-      path: 'attendance',
-      loadChildren: () => import('./attendance/attendance.module')
-        .then(m => m.AttendanceModule),
+      path: 'orders',
+      loadChildren: () => import('./orders/orders.module')
+        .then(m => m.OrdersModule),
+    },
+    {
+      path: 'department',
+      loadChildren: () => import('./department/department.module')
+        .then(m => m.DepartmentModule),
     },
     {
       path: '',
