@@ -18,6 +18,11 @@ const routes: Routes = [{
         .then(m => m.EmployeeModule),
     },
     {
+      path: 'department',
+      loadChildren: () => import('./department/department.module')
+        .then(m => m.DepartmentModule)
+    },
+    {
       path: '',
       redirectTo: 'home',
       pathMatch: 'full',
