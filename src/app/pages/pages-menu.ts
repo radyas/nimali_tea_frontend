@@ -39,12 +39,12 @@ export const MENU_ITEMS: NbMenuItem[] = [
     },
     children: [
       {
-        title: 'Add Employee',
-        link: '/employee/add',
+        title: 'Add Department',
+        link: '/department/add',
       },
       {
-        title: 'View Employees',
-        link: '/employee/view',
+        title: 'View Departments',
+        link: '/department/view',
       },
     ],
   },

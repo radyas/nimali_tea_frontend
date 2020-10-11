@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { UserData } from '../../../@core/data/users';
 
 @Component({
   selector: 'ngx-view-employee',
@@ -6,10 +7,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./view-employee.component.scss']
 })
 export class ViewEmployeeComponent implements OnInit {
+  test;
 
-  constructor() { }
+  constructor(private employeeService: UserData) { }
 
   ngOnInit(): void {
+    this.employeeService.getUsers().subscribe((users: any) => console.log(users))
+    console.log(this.test)
   }
 
 }
