@@ -39,12 +39,46 @@ export const MENU_ITEMS: NbMenuItem[] = [
     },
     children: [
       {
-        title: 'Add Employee',
-        link: '/employee/add',
+        title: 'Add Department',
+        link: '/department/add',
       },
       {
-        title: 'View Employees',
-        link: '/employee/view',
+        title: 'View Departments',
+        link: '/department/view',
+      },
+    ],
+  },
+  {
+    title: 'Manage Customer',
+    icon: {
+      icon: 'users',
+      pack: 'font-awesome',
+    },
+    children: [
+      {
+        title: 'Add Customer',
+        link: '/customer/add',
+      },
+      {
+        title: 'View Customers',
+        link: '/customer/view',
+      },
+    ],
+  },
+  {
+    title: 'Manage Orders',
+    icon: {
+      icon: 'chart-line',
+      pack: 'font-awesome',
+    },
+    children: [
+      {
+        title: 'Add Order',
+        link: '/orders/add',
+      },
+      {
+        title: 'View Orders',
+        link: '/orders/view',
       },
     ],
   },
