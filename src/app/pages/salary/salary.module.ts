@@ -7,7 +7,16 @@ import { ViewSalaryComponent } from './view-salary/view-salary.component';
 import { AddAdjustmentsComponent } from './adjustments/add-adjustments/add-adjustments.component';
 import { ViewAdjustmentsComponent } from './adjustments/view-adjustments/view-adjustments.component';
 import {SalaryRoutingModule} from './salary-routing.module';
-import {NbButtonModule, NbCardModule, NbDatepickerModule, NbInputModule, NbSelectModule} from '@nebular/theme';
+import {
+  NbButtonModule,
+  NbCardModule,
+  NbDatepickerModule,
+  NbIconModule,
+  NbInputModule, NbRadioModule,
+  NbSelectModule,
+} from '@nebular/theme';
+import {Ng2SmartTableModule} from 'ng2-smart-table';
+import {FormsModule} from "@angular/forms";
 
 
 
@@ -22,6 +31,10 @@ import {NbButtonModule, NbCardModule, NbDatepickerModule, NbInputModule, NbSelec
     NbDatepickerModule,
     NbButtonModule,
     NbInputModule,
+    NbIconModule,
+    Ng2SmartTableModule,
+    NbRadioModule,
+    FormsModule,
   ],
 })
 export class SalaryModule { }

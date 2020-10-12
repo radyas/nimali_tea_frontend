@@ -9,11 +9,7 @@
             <label for="id" class="label col-sm-3 form-control-label">ID</label>
             <div class="col-sm-9">
               <nb-select id="id" placeholder="Select ID" [(selected)]="selectedItem">
-                <nb-option value="0">0</nb-option>
-                <nb-option value="1">1</nb-option>
-                <nb-option value="2">2</nb-option>
-                <nb-option value="3">2</nb-option>
-                <nb-option value="4">4</nb-option>
+                <nb-option *ngFor="let usr of users" value="{{usr.username}}">{{usr.username}}</nb-option>
               </nb-select>
             </div>
           </div>
@@ -21,6 +17,21 @@
             <label for="description" class="label col-sm-3 form-control-label">Description</label>
             <div class="col-sm-9">
               <input type="text" nbInput fullWidth id="description" placeholder="Description">
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="type" class="label col-sm-3 form-control-label">Type</label>
+            <div class="col-sm-9">
+              <div class="form-group row">
+                <div class="col-5">
+                  <nb-radio-group id="type" [(ngModel)]="selectedOption">
+                    <nb-radio value="addition">Addition</nb-radio>
+                  </nb-radio-group>
+                </div>
+                <div class="col-5">
+                  <nb-radio value="deduction">Deduction</nb-radio>
+                </div>
+              </div>
             </div>
           </div>
           <div class="form-group row">
@@ -34,15 +45,6 @@
             <label for="amount" class="label col-sm-3 form-control-label">Amount</label>
             <div class="col-sm-9">
               <input type="text" nbInput fullWidth id="amount" placeholder="Amount">
-            </div>
-          </div>
-          <div class="form-group row">
-            <label for="type" class="label col-sm-3 form-control-label">Type</label>
-            <div class="col-sm-9">
-              <nb-select id="type" placeholder="Select Type" [(selected)]="selectedItem">
-                <nb-option value="addition">Addition</nb-option>
-                <nb-option value="deduction">Deduction</nb-option>
-              </nb-select>
             </div>
           </div>
           <br>

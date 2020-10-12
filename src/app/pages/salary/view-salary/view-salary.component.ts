@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {SalaryData} from '../../../@core/data/salary';
+import {LocalDataSource} from 'ng2-smart-table';
 
 @Component({
   selector: 'ngx-view-salary',
@@ -7,12 +8,38 @@ import {SalaryData} from '../../../@core/data/salary';
   styleUrls: ['./view-salary.component.scss'],
 })
 export class ViewSalaryComponent implements OnInit {
-
+  data: LocalDataSource;
   constructor(private salservice: SalaryData) { }
 
   ngOnInit(): void {
+    this.data = new LocalDataSource();
     this.salservice.getSalary()
-      .subscribe(data => console.log(data));
+      .subscribe(document => {
+        this.data.load(document);
+      });
   }
-
+  settings = {
+    columns: {
+      id: {
+        title: 'ID',
+      },
+      month: {
+        title: 'Month',
+      },
+      total: {
+        title: 'Net Salary',
+      },
+      issueDate: {
+        title: 'Issue Date',
+      },
+      employee: {
+        title: 'Employee',
+      },
+      },
+      actions: {
+        add: false,
+        edit: false,
+        delete: false,
+      },
+  };
 }

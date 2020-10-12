@@ -11,11 +11,7 @@
               <label for="id" class="label col-sm-3 form-control-label">ID</label>
               <div class="col-sm-9">
                 <nb-select id="id" placeholder="Select ID" [(selected)]="selectedItem">
-                  <nb-option value="0">0</nb-option>
-                  <nb-option value="1">1</nb-option>
-                  <nb-option value="2">2</nb-option>
-                  <nb-option value="3">2</nb-option>
-                  <nb-option value="4">4</nb-option>
+                  <nb-option *ngFor="let usr of users" value="{{usr.username}}">{{usr.username}}</nb-option>
                 </nb-select>
               </div>
             </div>
