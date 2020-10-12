@@ -51,7 +51,7 @@ export const MENU_ITEMS: NbMenuItem[] = [
   {
     title: 'Manage Customer',
     icon: {
-      icon: 'user',
+      icon: 'users',
       pack: 'font-awesome',
     },
     children: [
