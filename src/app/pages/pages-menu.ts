@@ -82,4 +82,21 @@ export const MENU_ITEMS: NbMenuItem[] = [
       },
     ],
   },
+  {
+    title: 'Manage Documents',
+    icon: {
+      icon: 'file-alt',
+      pack: 'font-awesome',
+    },
+    children: [
+      {
+        title: 'Add Document',
+        link: '/documents/add',
+      },
+      {
+        title: 'View Documents',
+        link: '/documents/view',
+      },
+    ],
+  },
 ];

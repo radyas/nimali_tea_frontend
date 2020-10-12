@@ -34,6 +34,11 @@ const routes: Routes = [{
         .then(m => m.DepartmentModule),
     },
     {
+      path: 'documents',
+      loadChildren: () => import('./documents/documents.module')
+        .then(m => m.DocumentsModule),
+    },
+    {
       path: '',
       redirectTo: 'home',
       pathMatch: 'full',
