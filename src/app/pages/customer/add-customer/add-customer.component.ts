@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Customer, CustomerData } from '../../../@core/data/customer';
 
 @Component({
   selector: 'ngx-add-customer',
@@ -7,9 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AddCustomerComponent implements OnInit {
 
-  constructor() { }
+  customer  = new Customer();
+
+  constructor(private custService: CustomerData) { }
 
   ngOnInit(): void {
   }
 
+  onClick() {
+    this.custService.addCustomer(this.customer).subscribe(cust => console.log(this.customer))
+  }
 }

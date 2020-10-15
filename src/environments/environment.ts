@@ -10,4 +10,5 @@
 
 export const environment = {
   production: false,
+  token : 'd84c817dd8020f2e67f16968c96640205d750f61',
 };
