@@ -5,6 +5,7 @@ import { ViewCustomerComponent } from './view-customer/view-customer.component';
 import { CustomerRoutingModule } from './customer-routing.module';
 import { ThemeModule } from '../../@theme/theme.module';
 import { NbInputModule, NbCardModule, NbButtonModule, NbActionsModule, NbUserModule, NbCheckboxModule, NbRadioModule, NbDatepickerModule, NbSelectModule, NbIconModule } from '@nebular/theme';
+import { Ng2SmartTableModule } from 'ng2-smart-table';
 
 
 
@@ -24,6 +25,8 @@ import { NbInputModule, NbCardModule, NbButtonModule, NbActionsModule, NbUserMod
     NbDatepickerModule,
     NbSelectModule,
     NbIconModule,
+    NbCardModule,
+    Ng2SmartTableModule,
   ],
 })
 export class CustomerModule { }

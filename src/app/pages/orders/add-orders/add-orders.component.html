@@ -5,19 +5,23 @@
         <nb-card-body>
           <form class="form-horizontal">
             <div class="form-group row">
-                <label for="inputpid3" class="label col-sm-3 form-control-label">Product ID</label>
+                <label for="inputpid3" class="label col-sm-3 form-control-label">Product</label>
                 <div class="col-sm-9">
-                  <input type="pid" nbInput fullWidth id="inputpid3" placeholder="product id">
+                  <nb-select placeholder="Select Product" >
+                        <nb-option *ngFor="let product of products" value="{{product.id}}">{{product.name}}</nb-option>
+                    </nb-select>
                 </div>
               </div>
               <div class="form-group row">
-                <label for="inputcid3" class="label col-sm-3 form-control-label">Customer ID</label>
+                <label for="inputcid3" class="label col-sm-3 form-control-label">Customer</label>
                 <div class="col-sm-9">
-                    <input type="cid" nbInput fullWidth id="inputcid3" placeholder="customer id">
+                  <nb-select placeholder="Select Customer" >
+                    <nb-option *ngFor="let customer of customers" value="{{customer.id}}">{{customer.name}}</nb-option>
+                </nb-select>
                 </div>
               </div>
               <div class="form-group row">
-                <label for="inputAddress" class="label col-sm-3 form-control-label">Brand</label>
+                <label for="inputBrand" class="label col-sm-3 form-control-label">Brand</label>
                 <div class="col-sm-9">
                     <nb-select placeholder="Select Brand" [(selected)]="selectedItem">
                         <nb-option value="">Brand A</nb-option>
@@ -29,25 +33,25 @@
                 </div>
               </div>
               <div class="form-group row">
-                <label for="inputPhone3" class="label col-sm-3 form-control-label">Weight</label>
+                <label for="inputWeight3" class="label col-sm-3 form-control-label">Weight</label>
                 <div class="col-sm-9">
-                  <input type="phone" nbInput fullWidth id="inputPhone3" placeholder="weight">
+                  <input type="number" nbInput fullWidth id="inputWeight3" placeholder="weight">
                 </div>
               </div>
             <div class="form-group row">
-              <label for="inputEmail3" class="label col-sm-3 form-control-label">Date</label>
+              <label for="inputDate3" class="label col-sm-3 form-control-label">Date</label>
               <div class="col-sm-9">
                 <input nbInput placeholder="Pick Date" [nbDatepicker]="dateTimePicker">
                 <nb-datepicker #dateTimePicker></nb-datepicker>
               </div>
             </div>
             <div class="form-group row">
-                <label for="inputEmail3" class="label col-sm-3 form-control-label">Shipping Address</label>
+                <label for="inputAddress3" class="label col-sm-3 form-control-label">Shipping Address</label>
                 <div class="col-sm-9">
-                  <input type="email" nbInput fullWidth id="inputEmail3" placeholder="shipping address">
+                  <input type="text" nbInput fullWidth id="inputAddress3" placeholder="shipping address">
                 </div>
               </div>
-
+            
             <div class="row">
               <div class="col-md-3 offset-md-3">
                 <button nbButton hero status="success">Submit</button>

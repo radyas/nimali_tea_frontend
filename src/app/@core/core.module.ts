@@ -14,12 +14,12 @@ import { UserService } from './mock/users.service';
 import { MockDataModule } from './mock/mock-data.module';
 import { DepartmentData } from './data/department';
 import { DepartmentService } from './mock/department.service';
-import {AdjustmentsData} from './data/adjustments';
-import {AdjustmentsService} from './mock/adjustments.service';
-import {SalaryData} from './data/salary';
-import {SalaryService} from './mock/salary.service';
-import {AttendanceData} from './data/attendance';
-import {AttendanceService} from './mock/attendance.service';
+import { CustomerData } from './data/customer';
+import { CustomerService } from './mock/customer.service';
+import { OrdersData } from './data/orders';
+import { OrdersService } from './mock/orders.service';
+import { ProductsData } from './data/products';
+import { ProductsService } from './mock/products.service';
 
 const socialLinks = [
   {
@@ -42,9 +42,9 @@ const socialLinks = [
 const DATA_SERVICES = [
   { provide: UserData, useClass: UserService },
   { provide: DepartmentData, useClass: DepartmentService },
-  { provide: AdjustmentsData, useClass: AdjustmentsService},
-  { provide: SalaryData, useClass: SalaryService},
-  { provide: AttendanceData, useClass: AttendanceService},
+  { provide: CustomerData, useClass: CustomerService },
+  { provide: OrdersData, useClass: OrdersService },
+  { provide: ProductsData, useClass: ProductsService },
 ];
 
 export class NbSimpleRoleProvider extends NbRoleProvider {
