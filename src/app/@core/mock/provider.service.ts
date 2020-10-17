@@ -1,16 +1,17 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from "@angular/core";
 import { Observable } from 'rxjs';
-import { OrdersData } from '../data/orders';
+import { ProviderData } from '../data/provider';
+
 
 
 @Injectable()
-export class OrdersService extends OrdersData{
+export class ProviderService extends ProviderData{
     constructor(private http: HttpClient){
         super();
     }
-    getOrders():Observable<any>{
-        let apiUrl = 'http://localhost:4200/api/orders/'
+    getProviders():Observable<any>{
+        let apiUrl = 'http://localhost:4200/api/providers/'
         return this.http.get(apiUrl)
     }
 }

@@ -26,6 +26,10 @@ import {SalaryData} from './data/salary';
 import {SalaryService} from './mock/salary.service';
 import {AdjustmentsData} from './data/adjustments';
 import {AdjustmentsService} from './mock/adjustments.service';
+import { ProviderService } from './mock/provider.service';
+import { ProviderData } from './data/provider';
+import { DeliveryData } from './data/delivery';
+import { DeliveryService } from './mock/delivery.service';
 
 const socialLinks = [
   {
@@ -54,6 +58,8 @@ const DATA_SERVICES = [
   { provide: AttendanceData, useClass: AttendanceService },
   { provide: SalaryData, useClass: SalaryService},
   { provide: AdjustmentsData, useClass: AdjustmentsService},
+  { provide: ProviderData, useClass: ProviderService },
+  { provide: DeliveryData, useClass: DeliveryService },
 ];
 
 export class NbSimpleRoleProvider extends NbRoleProvider {

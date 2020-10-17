@@ -142,4 +142,21 @@ export const MENU_ITEMS: NbMenuItem[] = [
       },
     ],
   },
+  {
+    title: 'Manage Deliveries',
+    icon: {
+      icon: 'box',
+      pack: 'font-awesome',
+    },
+    children: [
+      {
+        title: 'Deliveries',
+        link: '/delivery/view',
+      },
+      {
+        title: 'Providers',
+        link: '/provider/view',
+      },
+    ],
+  },
 ];
