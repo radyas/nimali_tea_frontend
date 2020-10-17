@@ -13,6 +13,10 @@ const routes: Routes = [{
     {
       path: 'view',
       component: ViewDocumentComponent,
+    },
+    {
+      path: 'edit',
+      component: ViewDocumentComponent,
     }
   ],
 }];

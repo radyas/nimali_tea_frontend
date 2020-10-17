@@ -97,6 +97,10 @@ export const MENU_ITEMS: NbMenuItem[] = [
         title: 'View Documents',
         link: '/documents/view',
       },
+      {
+        title: 'Edit Documents',
+        link: '/documents/edit',
+      },
     ],
   },
 ];
