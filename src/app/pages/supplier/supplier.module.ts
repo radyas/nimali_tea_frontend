@@ -3,8 +3,9 @@ import { CommonModule } from '@angular/common';
 import { AddSupplierComponent } from './add-supplier/add-supplier.component';
 import { ViewSupplierComponent } from './view-supplier/view-supplier.component';
 import { SupplierRoutingModule } from './supplier-routing.module';
-import { NbButtonModule, NbCardModule, NbInputModule } from '@nebular/theme';
+import { NbButtonModule, NbCardModule, NbInputModule, NbSelectModule, NbIconModule } from '@nebular/theme';
 import { ThemeModule } from '../../@theme/theme.module';
+import { Ng2SmartTableModule } from 'ng2-smart-table';
 
 
 
@@ -17,7 +18,9 @@ import { ThemeModule } from '../../@theme/theme.module';
     NbInputModule,
     NbButtonModule,
     ThemeModule,
-  
+    Ng2SmartTableModule,
+    NbIconModule,
+    NbSelectModule,
   ]
 })
 export class SupplierModule { }

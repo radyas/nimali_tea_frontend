@@ -5,7 +5,7 @@ import { Injectable } from '@angular/core';
 import { Contacts, RecentUsers, UserData } from '../data/users';
 
 const httpOptions = {
-  headers: new HttpHeaders({'Content-Type': 'application/json'})
+  headers: new HttpHeaders({'Content-Type': 'application/json'}),
 };
 
 @Injectable()
