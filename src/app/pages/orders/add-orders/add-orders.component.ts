@@ -3,6 +3,7 @@ import { LocalDataSource } from 'ng2-smart-table';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 import { Customer, CustomerData } from '../../../@core/data/customer';
+import { Orders, OrdersData } from '../../../@core/data/orders';
 import { Products, ProductsData } from '../../../@core/data/products';
 
 @Component({
@@ -16,7 +17,8 @@ export class AddOrdersComponent implements OnInit, OnDestroy {
   customers: Customer[];
 
   constructor(private productsService: ProductsData,
-              private customerService: CustomerData
+              private customerService: CustomerData,
+              private ordService:OrdersData
             ) {
 
     this.productsService.getProducts()
@@ -27,13 +29,22 @@ export class AddOrdersComponent implements OnInit, OnDestroy {
       .pipe(takeUntil(this.destroy$))
       .subscribe(data => this.customers = data)
    }
-
+  orders = new Orders();
+ 
   ngOnInit(): void {
+  }
+  onClick(){
+    this.ordService.addOrders(this.orders).subscribe(ord => console.log(this.orders))
+    
+  }
+  onClickCancel(){
+    this.orders= new Orders();
+
   }
 
   ngOnDestroy() {
     this.destroy$.next();
     this.destroy$.complete();
   }
-  selectedItem = '2';
+  
 }
