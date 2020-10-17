@@ -26,6 +26,12 @@ export class ViewSalaryComponent implements OnInit {
       month: {
         title: 'Month',
       },
+      addition: {
+        title: 'Total Additions',
+      },
+      deduction: {
+        title: 'Total Deductions',
+      },
       total: {
         title: 'Net Salary',
       },

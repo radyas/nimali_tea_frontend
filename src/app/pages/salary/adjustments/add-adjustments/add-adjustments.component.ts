@@ -1,5 +1,5 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
-import {Adjustments} from '../../../../@core/data/adjustments';
+import {Adjustments, AdjustmentsData} from '../../../../@core/data/adjustments';
 import {Subject} from 'rxjs';
 import {AdjustmentsService} from '../../../../@core/mock/adjustments.service';
 import {takeUntil} from 'rxjs/operators';
@@ -15,7 +15,8 @@ export class AddAdjustmentsComponent implements OnInit, OnDestroy {
   selectedItem: any;
   users: User[];
   selectedOption: any;
-  constructor(private userService: UserData) { }
+  adjustments = new Adjustments();
+  constructor(private userService: UserData, private adjustmentService: AdjustmentsData) { }
 
   ngOnInit(): void {
     this.userService.getUsers()
@@ -25,6 +26,9 @@ export class AddAdjustmentsComponent implements OnInit, OnDestroy {
   ngOnDestroy(): void {
     this.destroy$.next();
     this.destroy$.complete();
+  }
+  onClick() {
+    this.adjustmentService.addAdjustment(this.adjustments).subscribe(adj => console.log(this.adjustments));
   }
 
 }

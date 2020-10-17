@@ -8,7 +8,7 @@ import { Products, ProductsData } from '../../../@core/data/products';
 @Component({
   selector: 'ngx-add-orders',
   templateUrl: './add-orders.component.html',
-  styleUrls: ['./add-orders.component.scss']
+  styleUrls: ['./add-orders.component.scss'],
 })
 export class AddOrdersComponent implements OnInit, OnDestroy {
   private destroy$: Subject<void> = new Subject<void>();
@@ -16,16 +16,16 @@ export class AddOrdersComponent implements OnInit, OnDestroy {
   customers: Customer[];
 
   constructor(private productsService: ProductsData,
-              private customerService: CustomerData
+              private customerService: CustomerData,
             ) {
 
     this.productsService.getProducts()
       .pipe(takeUntil(this.destroy$))
-      .subscribe(data => this.products = data)
+      .subscribe(data => this.products = data),
 
     this.customerService.getCustomers()
       .pipe(takeUntil(this.destroy$))
-      .subscribe(data => this.customers = data)
+      .subscribe(data => this.customers = data);
    }
 
   ngOnInit(): void {
