@@ -1,18 +1,17 @@
 import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { DepartmentData } from '../data/department';
+import { WarehousesData } from '../data/warehouses';
 
 
 @Injectable()
-export class DepartmentService extends DepartmentData {
-
+export class WarehousesService extends WarehousesData {
   constructor(private http: HttpClient) {
     super();
   }
 
-  getDepartments(): Observable<any>{
-      let apiUrl = 'http://localhost:4200/api/department/'
+  getWarehouses(): Observable<any> {
+      let apiUrl = 'http://localhost:4200/api/Warehouse/';
       return this.http.get(apiUrl);
   }
 }

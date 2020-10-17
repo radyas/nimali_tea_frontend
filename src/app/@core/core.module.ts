@@ -18,6 +18,8 @@ import { ProductsService } from './mock/products.service';
 import { ProductsData } from './data/products';
 import { SuppliersService } from './mock/suppliers.services';
 import { SuppliersData } from './data/suppliers';
+import { WarehousesData } from './data/warehouses';
+import { WarehousesService } from './mock/warehouses.service';
 
 const socialLinks = [
   {
@@ -42,6 +44,7 @@ const DATA_SERVICES = [
   { provide: DepartmentData, useClass: DepartmentService },
   { provide: ProductsData, useClass: ProductsService },
   { provide: SuppliersData, useClass: SuppliersService },
+  { provide: WarehousesData, useClass: WarehousesService },
 ];
 
 export class NbSimpleRoleProvider extends NbRoleProvider {

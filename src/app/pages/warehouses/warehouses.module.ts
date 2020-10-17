@@ -3,8 +3,9 @@ import { CommonModule } from '@angular/common';
 import { AddWarehouseComponent } from './add-warehouse/add-warehouse.component';
 import { ViewWarehouseComponent } from './view-warehouse/view-warehouse.component';
 import { WarehouseRoutingModule } from './warehouse-routing.module';
-import { NbButtonModule, NbCardModule, NbInputModule } from '@nebular/theme';
+import { NbButtonModule, NbCardModule, NbInputModule, NbIconModule } from '@nebular/theme';
 import { ThemeModule } from '../../@theme/theme.module';
+import { Ng2SmartTableModule } from 'ng2-smart-table';
 
 
 
@@ -17,7 +18,9 @@ import { ThemeModule } from '../../@theme/theme.module';
     NbButtonModule,
     NbCardModule,
     ThemeModule,
-    
+    Ng2SmartTableModule,
+    NbIconModule,
+
   ]
 })
 export class WarehousesModule { }
