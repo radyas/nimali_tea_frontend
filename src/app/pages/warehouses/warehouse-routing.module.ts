@@ -1,6 +1,6 @@
 import { Routes, RouterModule } from '@angular/router';
-import { AddProductComponent } from './add-product/add-product.component';
-import { ViewProductComponent } from './view-product/view-product.component';
+import { AddWarehouseComponent } from './add-warehouse/add-warehouse.component';
+import { ViewWarehouseComponent } from './view-warehouse/view-warehouse.component';
 import { NgModule } from '@angular/core';
 
 
@@ -9,18 +9,19 @@ const routes: Routes = [{
     children: [
       {
         path: 'add',
-        component: AddProductComponent,
+        component: AddWarehouseComponent,
       },
       {
         path: 'view',
-        component: ViewProductComponent,
+        component: ViewWarehouseComponent,
       },
     ],
   }];
-
+  
   @NgModule({
     imports: [RouterModule.forChild(routes)],
     exports: [RouterModule],
   })
-  export class ProductsRoutingModule {
+  export class WarehouseRoutingModule {
   }
+  
