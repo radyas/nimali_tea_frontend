@@ -3,6 +3,7 @@ import { LocalDataSource } from "ng2-smart-table";
 import { Delivery } from "../../../@core/data/delivery";
 import { DeliveryDefaults } from "../../../@core/data/deliveryDefault";
 import { DeliveryService } from "../../../@core/mock/delivery.service";
+import { ProviderRenderComponent } from '../../renderComponents/customerRenderComponent/providerRenderComponent';
 
 @Component({
   selector: "ngx-view-delivery",
@@ -47,6 +48,8 @@ export class ViewDeliveryComponent implements OnInit {
       provider: {
         title: "Provider",
         filter: false,
+        type: "custom",
+        renderComponent: ProviderRenderComponent,
       },
       date: {
         title: "Date",
