@@ -5,7 +5,8 @@ body {
 	font-family: 'Roboto', sans-serif;
 }</style></head>
 <div class="row d-flex justify-content-center">
-    <body>
+    <nb-card>
+        <nb-card-body>
         <form action="/action_page.php">
             <table>
                 <h3><b>ADD DOCUMENTS</b></h3><br>
@@ -17,6 +18,10 @@ body {
                     <td>Document Type</td><td><input type="text"></td>
                 </tr>
                 <br>
+                <tr>
+                    <td>Issued Authority</td><td><input type="text"></td>
+                </tr>
+                <br><br><br>
 
                 <tr>
                     <td>Upload</td><td><input type="file"></td>
@@ -32,9 +37,15 @@ body {
                         <option value="IT">IT</option>
                         <option value="Marketing">Marketing</option></select></td>
                 </tr><br>
-                <input type="button" value="Save">
-                <input type="button" value="Cancel">    
+                <button routerLink='/documents/add' class="btn btn-outline-dark">
+                    <nb-icon icon="file-alt" pack="font-awesome"></nb-icon>
+                    <span class="ml-2">Save</span>
+                </button>
+                <button routerLink='/documents/add' class="btn btn-outline-dark">
+                    <span class="ml-2">Cancel</span>
+                </button>    
             </table>
         </form>
-    </body>
+        </nb-card-body>
+    </nb-card>          
 </div>

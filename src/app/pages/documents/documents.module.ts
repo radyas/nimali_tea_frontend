@@ -5,12 +5,11 @@ import { ViewDocumentComponent } from './view-document/view-document.component';
 import { NbCardModule, NbIconModule, NbInputModule } from '@nebular/theme';
 import { Ng2SmartTableModule } from 'ng2-smart-table';
 import { DocumentRoutingModule } from './document-routing.module';
-import { EditComponent } from './edit/edit.component';
 
 
 
 @NgModule({
-  declarations: [AddDocumentComponent, ViewDocumentComponent, EditComponent],
+  declarations: [AddDocumentComponent, ViewDocumentComponent],
   imports: [
     CommonModule,
     NbInputModule,
