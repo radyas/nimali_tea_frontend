@@ -25,12 +25,31 @@ export class ViewDocumentComponent implements OnInit {
     columns: {
       name: {
         title: 'Document Name',
+        filter: false,
       },
       docCode: {
         title: "Document Code",
+        filter: false,
       },
       status: {
         title: 'Status',
+        filter: false,
+      },
+      docType: {
+        title: 'Document Type',
+        filter: false,
+      },
+      issuedAuthority: {
+        title: 'Issued Authority',
+        filter: false,
+      },
+      createdDate: {
+        title: 'Created Date',
+        filter: false,
+      },
+      department: {
+        title: 'Department',
+        filter: false,
       },
     },
     actions: {
