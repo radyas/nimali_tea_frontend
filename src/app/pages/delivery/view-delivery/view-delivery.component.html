@@ -1,15 +1,54 @@
-<div class="row d-flex justify-content-center">
-    <nb-card>
-        <nb-card-body>
-            <div class="row mb-4 mt-2 mr-2 justify-content-end">
-                <button routerLink='/orders/add' class="btn btn-outline-dark">
-                    <nb-icon icon="chart-line" pack="font-awesome"></nb-icon>
-                    <span class="ml-2">Add Delivery</span>
-                </button>
+<nb-card size="medium">
+  <nb-card-body>
+    <div class="row d-flex justify-content-end">
+      <button routerLink="/delivery/add" nbButton hero status="primary">
+        <nb-icon icon="chart-line" pack="font-awesome"></nb-icon>
+        <span class="ml-2">Add Delivery</span>
+      </button>
+    </div>
+    <div class="row d-flex justify-content-center">
+      <div class="col-12">
+        <nb-tabset fullWidth>
+          <nb-tab tabTitle="OVERVIEW">
+            <div class="row d-flex justify-content-center">
+              <div class="col-12">
+                <nb-card>
+                  <nb-card-body>
+                    <div class="row d-flex justify-content-center">
+                      <nb-card-body>
+                        <div class="subtitle">{{ "Delivery Count" }}</div>
+                        <div class="h3">
+                          {{ deliveryDefault.current | ngxNumberWithCommas }}
+                        </div>
+                        <nb-progress-bar
+                          [value]="deliveryDefault.getProgress()"
+                        ></nb-progress-bar>
+                        <div class="caption description">
+                          <bdi>{{ "Deliveries made in this month" }}</bdi>
+                        </div>
+                      </nb-card-body>
+                    </div>
+                  </nb-card-body>
+                </nb-card>
+              </div>
             </div>
-            <div class="row m-2">
-                <ng2-smart-table [settings]="settings" [source]="data"></ng2-smart-table>
+          </nb-tab>
+          <nb-tab tabTitle="DETAILED VIEW">
+          <div class="col-12">
+            <nb-card>
+              <nb-card-body>
+                <div class="row d-flex justify-content-center">
+                  <ng2-smart-table
+                    [settings]="settings"
+                    [source]="data"
+                  ></ng2-smart-table>
+                </div>
+              </nb-card-body>
+            </nb-card>
             </div>
-        </nb-card-body>
-    </nb-card>
-</div>
+          </nb-tab>
+        </nb-tabset>
+      </div>
+    </div>
+  </nb-card-body>
+</nb-card>
