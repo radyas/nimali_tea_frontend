@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { LocalDataSource } from 'ng2-smart-table';
+import { DocumentsData } from '../../../@core/data/documents';
 
 @Component({
   selector: 'ngx-edit',
@@ -6,10 +8,18 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./edit.component.scss']
 })
 export class EditComponent implements OnInit {
+  data: LocalDataSource;
 
-  constructor() { }
+  constructor(private documentsService: DocumentsData) { }
 
   ngOnInit(): void {
+    this.data = new LocalDataSource();
+
+    this.documentsService.getDocuments()
+    .subscribe(documents =>{
+      console.log(documents)
+    })
+
   }
 
 }
