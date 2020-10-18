@@ -21,6 +21,6 @@ import { Ng2SmartTableModule } from 'ng2-smart-table';
     Ng2SmartTableModule,
     NbIconModule,
     NbSelectModule,
-  ]
+  ],
 })
 export class SupplierModule { }

@@ -6,6 +6,7 @@ import { ProductsRoutingModule } from './products-routing.module';
 import {NbButtonModule, NbCardModule, NbInputModule, NbSelectModule, NbIconModule} from '@nebular/theme';
 import { ThemeModule } from '../../@theme/theme.module';
 import { Ng2SmartTableModule } from 'ng2-smart-table';
+import { FormsModule } from '@angular/forms';
 
 
 
@@ -21,6 +22,7 @@ import { Ng2SmartTableModule } from 'ng2-smart-table';
     NbButtonModule,
     Ng2SmartTableModule,
     NbIconModule,
+    FormsModule,
   ],
 })
 export class ProductsModule { }
