@@ -44,6 +44,11 @@ const routes: Routes = [{
         .then(m => m.DeliveryModule),
     },
     {
+      path: 'provider',
+      loadChildren: () => import('./provider/provider.module')
+        .then(m => m.ProviderModule),
+    },
+    {
       path: '',
       redirectTo: 'home',
       pathMatch: 'full',

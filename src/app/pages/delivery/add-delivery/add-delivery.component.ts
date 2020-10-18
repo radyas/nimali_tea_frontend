@@ -23,24 +23,28 @@ export class AddDeliveryComponent implements OnInit,OnDestroy {
   }
 
   showToast(position) {
-    console.log(this.delivery)
+    this.delivery.address = "53/8c,Makuludoowa,Piliyandala,Colombo";
+    console.log(this.delivery.address)
     this.toastrService.show(
-      'This is super toast message',
-      `This is toast number: ${this.delivery.status}`,
-      { position , status: 'info' } ,);
+      'Demo Data',
+      `Form filled with demo Data!`,
+      { position , status: 'success' } ,);
   }
-
-
 
   ngOnDestroy(): void {
     this.destroy$.next();
     this.destroy$.complete();
-    
   }
 
   ngOnInit(): void {
   }
 
-  selectedItem = '2';
+  selectedItem = '0';
+
+  linearMode = true;
+
+  toggleLinearMode() {
+    this.linearMode = !this.linearMode;
+  }
 
 }
