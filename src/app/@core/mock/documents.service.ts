@@ -1,7 +1,7 @@
 import { Observable } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { DocumentsData } from '../data/documents';
+import { Documents, DocumentsData } from '../data/documents';
 import { environment } from '../../../environments/environment';
 
 const httpOptions = {
@@ -21,5 +21,9 @@ export class DocumentsService extends DocumentsData {
   getDocuments(): Observable<any>{
       let apiUrl = 'http://localhost:4200/api/documents/'
       return this.http.get(apiUrl,httpOptions)
+  }
+  addDocuments(documents:Documents): Observable<any>{
+      let apiUrl = 'http://localhost:4200/api/documents/'
+      return this.http.post<Documents>(apiUrl,documents,httpOptions)
   }
 }
