@@ -4,12 +4,13 @@ import { Observable } from 'rxjs';
 export class Suppliers{
     id: number;
     name: string;
-    phone: number;
+    phone: string;
     email: string;
 }
 
 export abstract class SuppliersData {
     abstract getSuppliers(): Observable<Suppliers[]>;
+    abstract addSuppliers(supplier: Suppliers): Observable<Suppliers>;
 }
 
 

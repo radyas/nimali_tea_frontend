@@ -24,6 +24,9 @@ export class ViewSupplierComponent implements OnInit {
   }
   settings = {
     columns: {
+      id: {
+        title: 'ID',
+      },
       name: {
         title: 'Name',
       },

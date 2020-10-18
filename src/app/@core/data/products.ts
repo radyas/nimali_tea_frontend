@@ -4,14 +4,14 @@ import { Observable } from 'rxjs';
 export class Products{
     id: number;
     name: string;
-    reference_number: number;
-    quantity: number;
-    price: number;
+    reference_number: String;
+    quantity: String;
+    price: String;
     type: string;
     location: string;
     weight: string;
     description: string;
-    employee: number;
+    employee: String;
 
     // constructor(id, name, reference_nuumber, quantity, price, type, location, weight, description, employee){
     //     this.id = id;
