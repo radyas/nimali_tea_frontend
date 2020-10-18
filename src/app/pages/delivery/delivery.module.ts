@@ -6,7 +6,7 @@ import { NbInputModule, NbCardModule, NbButtonModule, NbActionsModule, NbUserMod
 import { Ng2SmartTableModule } from 'ng2-smart-table';
 import { ThemeModule } from '../../@theme/theme.module';
 import { DeliveryRoutingModule } from './delivery-routing.module';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -31,7 +31,8 @@ import { FormsModule } from '@angular/forms';
     Ng2SmartTableModule,
     NbTabsetModule,
     NbProgressBarModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ]
 })
 export class DeliveryModule { }

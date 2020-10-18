@@ -16,7 +16,7 @@ export class ProviderService extends ProviderData{
         super();
     }
     getProviders():Observable<any>{
-        let apiUrl = 'http://localhost:4200/api/providers/'
+        let apiUrl = 'http://localhost:4200/api/provider/'
         return this.http.get(apiUrl,httpOptions)
     }
 

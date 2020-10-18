@@ -12,7 +12,7 @@ const httpOptions = {
 
 @Injectable()
 export class DepartmentService extends DepartmentData {
-   
+  
   constructor(private http: HttpClient) {
     super();
   }

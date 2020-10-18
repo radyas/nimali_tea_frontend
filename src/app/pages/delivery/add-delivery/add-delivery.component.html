@@ -3,9 +3,7 @@
     <nb-card>
       <nb-card-header>
         <div class="row justify-content-between">
-          <div class ="col">
-          Add Delivery
-          </div>
+          <div class="col">Add Delivery</div>
           <button (click)="showToast('top-right')" nbButton hero status="info">
             Demo Data
           </button>
@@ -18,12 +16,13 @@
               >Order</label
             >
             <div class="col-sm-9">
-              <nb-select placeholder="Select the order">
+              <nb-select placeholder="Select the order"
+              [(ngModel)]="neworder.id"
+                name="order">
                 <nb-option
                   *ngFor="let order of orders"
                   value="{{ order.id }}"
-                  >{{ order.name }}</nb-option
-                >
+                  >{{ order.id }}</nb-option>
               </nb-select>
             </div>
           </div>
@@ -32,11 +31,14 @@
               >Provider</label
             >
             <div class="col-sm-9">
-              <nb-select placeholder="Select the order">
+              <nb-select placeholder="Select the provider"
+              [(ngModel)]="newprovider.id"
+                name="provider">
+              
                 <nb-option
-                  *ngFor="let order of orders"
-                  value="{{ order.id }}"
-                  >{{ order.name }}</nb-option
+                  *ngFor="let provider of providers"
+                  value="{{ provider.id }}"
+                  >{{ provider.name }}</nb-option
                 >
               </nb-select>
             </div>
@@ -49,6 +51,8 @@
               <input
                 nbInput
                 placeholder="Pick Date"
+                [(ngModel)]="newdelivery.date"
+                name="date"
                 [nbDatepicker]="dateTimePicker"
               />
               <nb-datepicker #dateTimePicker></nb-datepicker>
@@ -60,6 +64,8 @@
             >
             <div class="col-sm-9">
               <nb-select
+              [(ngModel)]="newdelivery.status"
+                name="status"
                 placeholder="Select Status"
                 [(selected)]="selectedItem"
               >
@@ -78,6 +84,8 @@
               <input
                 type="number"
                 nbInput
+                [(ngModel)]="newdelivery.weight"
+                name="weight"
                 fullWidth
                 id="inputWeight3"
                 placeholder="Package Weight"
@@ -93,7 +101,7 @@
               <textarea
                 type="text"
                 nbInput
-                [(ngModel)]="delivery.address"
+                [(ngModel)]="newdelivery.address"
                 fullWidth
                 name="address"
                 id="inputAddress3"
@@ -103,9 +111,8 @@
           </div>
           <div class="row justify-content-center">
             <div class="col-md-3">
-              <button nbButton hero status="success">Add Delivery</button>
+              <button (click) = "addDelivery()" nbButton hero status="success">Add Delivery</button>
             </div>
-
             <div class="col-md-3">
               <button nbButton hero status="warning">Back</button>
             </div>

@@ -95,12 +95,4 @@ export const MENU_ITEMS: NbMenuItem[] = [
       },
     ],
   },
-  {
-    title: 'Delivery Providers',
-    link: '/provider/view',
-    icon: {
-      icon: 'truck',
-      pack: 'font-awesome',
-    }
-  },
 ];
