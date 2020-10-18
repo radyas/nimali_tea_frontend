@@ -11,7 +11,7 @@ export class Delivery{
     status:string;
     weight:string;
     value:string;
-    type:string;
+    address:string;
     order: Orders;
     
 }
