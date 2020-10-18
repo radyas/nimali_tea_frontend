@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { AddWarehouseComponent } from './add-warehouse/add-warehouse.component';
 import { ViewWarehouseComponent } from './view-warehouse/view-warehouse.component';
 import { WarehouseRoutingModule } from './warehouse-routing.module';
-import { NbButtonModule, NbCardModule, NbInputModule, NbIconModule } from '@nebular/theme';
+import { NbButtonModule, NbCardModule, NbInputModule, NbIconModule, NbSelectModule } from '@nebular/theme';
 import { ThemeModule } from '../../@theme/theme.module';
 import { Ng2SmartTableModule } from 'ng2-smart-table';
 import { FormsModule } from '@angular/forms';
@@ -22,6 +22,7 @@ import { FormsModule } from '@angular/forms';
     Ng2SmartTableModule,
     NbIconModule,
     FormsModule,
+    NbSelectModule,
 
   ]
 })
