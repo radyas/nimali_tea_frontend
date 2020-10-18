@@ -4,19 +4,21 @@ import { AddProviderComponent } from './add-provider/add-provider.component';
 import { ViewProviderComponent } from './view-provider/view-provider.component';
 import { ProviderRoutingModule } from './provider-routing.module';
 import { ThemeModule } from '../../@theme/theme.module';
-import { NbActionsModule, NbButtonModule, NbCardModule, NbCheckboxModule, NbDatepickerModule, NbIconModule, NbInputModule, NbRadioModule, NbSelectModule, NbUserModule } from '@nebular/theme';
+import { NbActionsModule, NbButtonModule, NbCardModule, NbCheckboxModule, NbDatepickerModule, NbIconModule, NbInputModule, NbProgressBarModule, NbRadioModule, NbSelectModule, NbStepperModule, NbTabsetModule, NbUserModule } from '@nebular/theme';
 import { Ng2SmartTableModule } from 'ng2-smart-table';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 
 @NgModule({
   declarations: [AddProviderComponent, ViewProviderComponent],
   imports: [
-    CommonModule,
+    CommonModule,  
     ProviderRoutingModule,
     ThemeModule,
     NbInputModule,
     NbCardModule,
+    NbStepperModule,
     NbButtonModule,
     NbActionsModule,
     NbUserModule,
@@ -27,7 +29,10 @@ import { Ng2SmartTableModule } from 'ng2-smart-table';
     NbIconModule,
     NbSelectModule,
     Ng2SmartTableModule,
-    NbCardModule,
+    NbTabsetModule,
+    NbProgressBarModule,
+    FormsModule,
+    ReactiveFormsModule
   ]
 })
 export class ProviderModule { }

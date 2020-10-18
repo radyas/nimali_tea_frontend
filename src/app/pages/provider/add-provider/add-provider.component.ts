@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup , Validators } from '@angular/forms';
+import { first } from 'rxjs/operators';
+import { Provider } from '../../../@core/data/provider';
 
 @Component({
   selector: 'ngx-add-provider',
@@ -7,9 +10,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AddProviderComponent implements OnInit {
 
-  constructor() { }
+  provider = new Provider;
 
-  ngOnInit(): void {
+  constructor() {
   }
 
+  ngOnInit() {
+
+  }
+
+  
 }
