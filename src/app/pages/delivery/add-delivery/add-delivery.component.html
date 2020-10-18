@@ -40,21 +40,21 @@
             <div class="form-group row">
                 <label for="inputAddress3" class="label col-sm-3 form-control-label">Shipping Address</label>
                 <div class="col-sm-9">
-                  <input type="text" nbInput fullWidth id="inputAddress3" placeholder="shipping address">
+                  <input type="text" nbInput [(ngModel)]="delivery.address" fullWidth name="address" id="inputAddress3" placeholder="shipping address">
                 </div>
               </div>
-            
             <div class="row justify-content-center">
               <div class="col-md-3 ">
                 <button nbButton hero status="success">Add Delivery</button>
               </div>
+              
                <div class="col-md-3 ">
                  <button nbButton hero status="warning">Back</button>
               </div>
             </div>
           </form>
           <div class="col-md-3 ">
-                 <button (click)="showToast('bottom-left')" nbButton hero status="info">Demo Data</button>
+                 <button (click)="showToast('top-right')" nbButton hero status="info">Demo Data</button>
               </div>
         </nb-card-body>
       </nb-card>

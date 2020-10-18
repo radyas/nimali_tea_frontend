@@ -2,6 +2,7 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { NbToastrService } from '@nebular/theme';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
+import { Delivery } from '../../../@core/data/delivery';
 import { Orders } from '../../../@core/data/orders';
 import { OrdersService } from '../../../@core/mock/orders.service';
 
@@ -15,20 +16,18 @@ export class AddDeliveryComponent implements OnInit,OnDestroy {
   private destroy$: Subject<void> = new Subject<void>();
   orders: Orders[];
   private index: number = 0;
+  delivery = new Delivery();
 
   constructor(private orderService:OrdersService,private toastrService: NbToastrService) { 
-
-    this.orderService.getOrders()
-      .pipe(takeUntil(this.destroy$))
-      .subscribe(data => this.orders = data)
-
+ 
   }
 
   showToast(position) {
+    console.log(this.delivery)
     this.toastrService.show(
       'This is super toast message',
-      `This is toast number: ${++this.index}`,
-      { position });
+      `This is toast number: ${this.delivery.status}`,
+      { position , status: 'info' } ,);
   }
 
 
@@ -36,6 +35,7 @@ export class AddDeliveryComponent implements OnInit,OnDestroy {
   ngOnDestroy(): void {
     this.destroy$.next();
     this.destroy$.complete();
+    
   }
 
   ngOnInit(): void {
