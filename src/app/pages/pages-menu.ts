@@ -51,7 +51,7 @@ export const MENU_ITEMS: NbMenuItem[] = [
   {
     title: 'Manage Customer',
     icon: {
-      icon: 'user',
+      icon: 'users',
       pack: 'font-awesome',
     },
     children: [
@@ -99,4 +99,72 @@ export const MENU_ITEMS: NbMenuItem[] = [
       },
     ],
   },
+  {
+    title: 'Manage Deliveries',
+    icon: {
+      icon: 'box',
+      pack: 'font-awesome',
+    },
+    children: [
+      {
+        title: 'Deliveries',
+        link: '/delivery/view',
+      },
+      {
+        title: 'Providers',
+        link: '/provider/view',
+      },
+    ],
+  },
+   {
+    title: 'Manage Products',
+    icon: {
+      icon: 'box-open',
+      pack: 'font-awesome',
+    },
+    children: [
+      {
+        title: 'Add Products',
+        link: '/products/add',
+      },
+      {
+        title: 'View Products',
+        link: '/products/view',
+      },
+    ],
+  },
+     {
+    title: 'Manage Warehouse',
+    icon: {
+      icon: 'luggage-cart',
+      pack: 'font-awesome',
+    },
+    children: [
+      {
+        title: 'Add Warehouse',
+        link: '/warehouses/add',
+      },
+      {
+        title: 'View Warehouses',
+        link: '/warehouses/view',
+      },
+    ],
+  },
+  {
+    title: 'Manage Supplier',
+    icon: {
+      icon: 'truck',
+      pack: 'font-awesome',
+    },
+    children: [
+      {
+        title: 'Add Supplier',
+        link: '/supplier/add',
+      },
+      {
+        title: 'View Supplier',
+        link: '/supplier/view',
+      },
+    ],
+  }
 ];

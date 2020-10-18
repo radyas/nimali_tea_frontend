@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { LocalDataSource } from 'ng2-smart-table';
 import { UserData } from '../../../@core/data/users';
 
 @Component({
@@ -7,14 +8,46 @@ import { UserData } from '../../../@core/data/users';
   styleUrls: ['./view-employee.component.scss']
 })
 export class ViewEmployeeComponent implements OnInit {
-  test;
+  data: LocalDataSource;
 
-  constructor(private employeeService: UserData) { }
+  constructor(private userService: UserData) {
+    this.data = new LocalDataSource();
+
+    this.userService.getUsers().subscribe(data => {
+      this.data.load(data)
+    })
+   }
 
   ngOnInit(): void {
-    this.employeeService.getUsers().subscribe((users: any) => console.log(users))
-    console.log(this.test)
   }
+
+  settings = {
+    columns: {
+      first_name: {
+        title: 'First Name'
+      },
+      last_name: {
+        title: 'Last Name'
+      },
+      email: {
+        title: 'Email'
+      },
+      phone: {
+        title: 'Phone Number'
+      },
+      nic: {
+        title: 'NIC'
+      },
+      dob: {
+        title: 'Date of Birth'
+      },
+    },
+    actions: {
+      add: false,
+      edit: false,
+      delete: false,
+    }
+  };
 
 }
  

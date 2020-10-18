@@ -7,43 +7,46 @@
             <div class="form-group row">
                 <label for="inputFname3" class="label col-sm-3 form-control-label">First Name</label>
                 <div class="col-sm-9">
-                  <input type="fname" nbInput fullWidth id="inputFname3" placeholder="First Name">
+                  <input type="text" nbInput [(ngModel)]="customer.name" name="name" fullWidth id="inputFname3" placeholder="First Name">
                 </div>
               </div>
               <div class="form-group row">
                 <label for="inputLname3" class="label col-sm-3 form-control-label">Last Name</label>
                 <div class="col-sm-9">
-                  <input type="lname" nbInput fullWidth id="inputLname3" placeholder="Last Name">
+                  <input type="text" nbInput fullWidth id="inputLname3" placeholder="Last Name">
                 </div>
               </div>
               <div class="form-group row">
                 <label for="inputAddress" class="label col-sm-3 form-control-label">Address</label>
                 <div class="col-sm-9">
-                  <input type="address" nbInput fullWidth id="inputAddress3" placeholder="Address">
+                  <input type="text" nbInput [(ngModel)]="customer.address" name="address" fullWidth id="inputAddress3" placeholder="Address">
                 </div>
               </div>
               <div class="form-group row">
                 <label for="inputPhone3" class="label col-sm-3 form-control-label">Contact Number</label>
                 <div class="col-sm-9">
-                  <input type="phone" nbInput fullWidth id="inputPhone3" placeholder="Contact number">
+                  <input type="phone" nbInput [(ngModel)]="customer.phone" name="phone" fullWidth id="inputPhone3" placeholder="Contact number">
                 </div>
               </div>
             <div class="form-group row">
               <label for="inputEmail3" class="label col-sm-3 form-control-label">Email</label>
               <div class="col-sm-9">
-                <input type="email" nbInput fullWidth id="inputEmail3" placeholder="Email">
+                <input type="email" nbInput [(ngModel)]="customer.email" name="email" fullWidth id="inputEmail3" placeholder="Email">
               </div>
             </div>
             
             <div class="row">
               <div class="col-md-3 offset-md-3">
-                <button nbButton hero status="success">Submit</button>
+                <button nbButton hero status="success" (click)='onClick()'>Submit</button>
               </div>
               <div class="col-md-3 offset-md-3">
                  <button nbButton hero status="warning">Cancel</button>
               </div>
             </div>
           </form>
+           <div class="col-md-3 ">
+                 <button (click)="test()" nbButton hero status="info">Demo Data</button>
+              </div>
         </nb-card-body>
       </nb-card>
     </div>
