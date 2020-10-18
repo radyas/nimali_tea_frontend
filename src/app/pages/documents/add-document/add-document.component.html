@@ -1,63 +1,57 @@
 <div class="row justify-content-center">
-    <div class="row d-flex justify-content-center">
-        <div class="col-md-8">
-          <nb-card>
-            <nb-card-header>Add Documents</nb-card-header>
-            <nb-card-body>
-              <form class="form-horizontal">
-                <div class="form-group row">
-                    <label for="inputpid3" class="label col-sm-3 form-control-label">Document Name</label>
-                    <div class="col-sm-9">
-                      <input type="pid" nbInput fullWidth id="inputpid3" placeholder="document name">
-                    </div>
-                  </div>
-                  <div class="form-group row">
-                    <label for="inputcid3" class="label col-sm-3 form-control-label">Document Type</label>
-                    <div class="col-sm-9">
-                        <input type="cid" nbInput fullWidth id="inputcid3" placeholder="document type">   
-                    </div>
-                  </div>
-                  <div class="form-group row">
-                    <label for="inputcid3" class="label col-sm-3 form-control-label">Issued Authority</label>
-                    <div class="col-sm-9">
-                        <input type="cid" nbInput fullWidth id="inputcid3" placeholder="issued authority">   
-                    </div>
-                  </div>
-                  <div class="form-group row">
-                    <label for="inputcid3" class="label col-sm-3 form-control-label">Upload</label>
-                    <div class="col-sm-9">
-                        <input type="cid" nbInput fullWidth id="inputcid3" placeholder="document type">   
-                    </div>
-                  </div>
-                  <div class="form-group row">
-                    <label for="inputEmail3" class="label col-sm-3 form-control-label">Added Date</label>
-                    <div class="col-sm-9">
-                      <input nbInput placeholder="Pick Date" [nbDatepicker]="dateTimePicker">
-                      <nb-datepicker #dateTimePicker></nb-datepicker>
-                    </div>
-                  </div>
-                  <div class="form-group row">
-                    <label for="inputAddress" class="label col-sm-3 form-control-label">Add To</label>
-                    <div class="col-sm-9">
-                        <nb-select placeholder="Select Department" [(selected)]="departments">
-                            <nb-option value="">Management</nb-option>
-                            <nb-option value="0">HR</nb-option>
-                            <nb-option value="1">Accounting and Finance</nb-option>
-                            <nb-option value="2">IT</nb-option>
-                            <nb-option value="3">Marketing</nb-option>
-                        </nb-select>
-                    </div>
-                  </div>
-                <div class="row">
-                  <div class="col-md-3 offset-md-3">
-                    <button nbButton hero status="success">Save</button>
-                  </div>
-                  <div class="col-md-3 offset-md-3">
-                     <button nbButton hero status="warning">Cancel</button>
-                  </div>
+    <div class="col-md-8">
+      <nb-card>
+        <nb-card-header>Add Documents</nb-card-header>
+        <nb-card-body>
+          <form class="form-horizontal">
+            <div class="form-group row">
+                <label for="inputFname3" class="label col-sm-3 form-control-label">Document Name</label>
+                <div class="col-sm-9">
+                  <input type="fname" nbInput fullWidth id="inputFname3" placeholder="document name">
                 </div>
-              </form>
-            </nb-card-body>
-          </nb-card>
-        </div>
-      </div>
+              </div>
+              <div class="form-group row">
+                <label for="inputLname3" class="label col-sm-3 form-control-label">Document Type</label>
+                <div class="col-sm-9">
+                  <input type="lname" nbInput fullWidth id="inputLname3" placeholder="document type">
+                </div>
+              </div>
+              <div class="form-group row">
+                <label for="inputAddress" class="label col-sm-3 form-control-label">Issued Authority</label>
+                <div class="col-sm-9">
+                  <input type="address" nbInput fullWidth id="inputAddress3" placeholder="issued authority">
+                </div>
+              </div>
+              <div class="form-group row">
+                <label for="inputPhone3" class="label col-sm-3 form-control-label">Added Date</label>
+                <div class="col-sm-9">
+                    <input nbInput placeholder="Pick Date" [nbDatepicker]="dateTimePicker">
+                    <nb-datepicker #dateTimePicker></nb-datepicker>
+                </div>
+              </div>
+            <div class="form-group row">
+              <label for="inputEmail3" class="label col-sm-3 form-control-label">Add To</label>
+              <div class="col-sm-9">
+                <nb-select placeholder="Select Department" [(selected)]="departments">
+                    <nb-option value="">Management</nb-option>
+                    <nb-option value="0">HR</nb-option>
+                    <nb-option value="1">Accounting and Finance</nb-option>
+                    <nb-option value="2">IT</nb-option>
+                    <nb-option value="3">Marketing</nb-option>
+                </nb-select>
+              </div>
+            </div>
+            
+            <div class="row">
+              <div class="col-md-3 offset-md-3">
+                <button nbButton hero status="success">Save</button>
+              </div>
+              <div class="col-md-3 offset-md-3">
+                 <button nbButton hero status="warning">Cancel</button>
+              </div>
+            </div>
+          </form>
+        </nb-card-body>
+      </nb-card>
+    </div>
+  </div>
