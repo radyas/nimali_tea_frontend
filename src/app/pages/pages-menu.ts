@@ -209,5 +209,22 @@ export const MENU_ITEMS: NbMenuItem[] = [
         link: '/supplier/view',
       },
     ],
-  }
+  },
+  {
+    title: 'Manage Vouchers',
+    icon: {
+      icon: 'file',
+      pack: 'font-awesome',
+    },
+    children: [
+      {
+        title: 'Add-voucher',
+        link: '/voucher/add',
+      },
+      {
+        title: 'View voucher',
+        link: '/voucher/view',
+      },
+    ],
+  },
 ];

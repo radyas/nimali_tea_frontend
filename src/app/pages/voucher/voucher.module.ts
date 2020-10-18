@@ -5,10 +5,14 @@ import { ViewVoucherComponent } from './view-voucher/view-voucher.component';
 
 
 
+
+
+
 @NgModule({
   declarations: [AddVoucherComponent, ViewVoucherComponent],
   imports: [
-    CommonModule
+    CommonModule,
+   
   ]
 })
 export class VoucherModule { }
