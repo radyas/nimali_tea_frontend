@@ -1,1 +1,27 @@
-<p>add-department works!</p>
+<div class="row justify-content-center">
+  <div class="col-md-8">
+    <nb-card>
+      <nb-card-header>Add Department</nb-card-header>
+      <nb-card-body>
+        <form class="form-horizontal">
+          <div class="form-group row">
+            <label for="inputFname3" class="col-sm-3 form-control-label">Department Name</label>
+            <div class="col-sm-9">
+              <input type="text" nbInput [(ngModel)]="department.name" name="name" fullWidth id="inputFname3"
+                     placeholder="Department Name" required>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-3 offset-md-3">
+              <button nbButton hero status="success" (click)='onClick()'>Submit</button>
+            </div>
+            <div class="col-md-3 offset-md-3">
+              <button nbButton hero status="warning" (click)='onClickCancel()'>Cancel</button>
+            </div>
+          </div>
+        </form>
+      </nb-card-body>
+    </nb-card>
+  </div>
+</div>
