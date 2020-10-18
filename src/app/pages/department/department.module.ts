@@ -4,7 +4,8 @@ import { AddDepartmentComponent } from './add-department/add-department.componen
 import { ViewDepartmentComponent } from './view-department/view-department.component';
 import { DepartmentRoutingModule } from './department-routing.module';
 import { Ng2SmartTableModule } from 'ng2-smart-table';
-import { NbCardModule, NbIconModule } from '@nebular/theme';
+import {NbButtonModule, NbCardModule, NbIconModule, NbInputModule} from '@nebular/theme';
+import {FormsModule} from "@angular/forms";
 
 
 @NgModule({
@@ -15,6 +16,9 @@ import { NbCardModule, NbIconModule } from '@nebular/theme';
     Ng2SmartTableModule,
     NbCardModule,
     NbIconModule,
+    FormsModule,
+    NbInputModule,
+    NbButtonModule,
   ]
 })
 export class DepartmentModule { }
