@@ -34,6 +34,7 @@ import {VoucherModule} from './voucher/voucher.module';
     OrdersModule,
     ProviderModule,
     ReportsModule,
+    DeliveryModule,
     SalaryModule,
     VoucherModule,
     NbDatepickerModule.forRoot(),

@@ -12,13 +12,13 @@ const httpOptions = {
 
 @Injectable()
 export class DepartmentService extends DepartmentData {
-   
+
   constructor(private http: HttpClient) {
     super();
   }
 
   getDepartments(): Observable<any>{
-      let apiUrl = 'http://localhost:4200/api/department/'
-      return this.http.get(apiUrl, httpOptions)
+      let apiUrl = 'http://localhost:4200/api/department/';
+      return this.http.get(apiUrl, httpOptions);
   }
 }

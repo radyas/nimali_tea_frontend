@@ -12,7 +12,7 @@ const httpOptions = {
 
 @Injectable()
 export class UserService extends UserData {
-  
+
   constructor(private http: HttpClient) {
     super();
   }
