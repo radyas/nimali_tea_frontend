@@ -53,7 +53,17 @@ const routes: Routes = [{
       loadChildren: () => import('./warehouses/warehouses.module')
         .then(m => m.WarehousesModule),
     },
-    
+
+    {
+      path: 'provider',
+      loadChildren: () => import('./provider/provider.module')
+        .then(m => m.ProviderModule),
+    },
+    {
+      path: 'delivery',
+      loadChildren: () => import('./delivery/delivery.module')
+        .then(m => m.DeliveryModule),
+    },
     {
       path: '',
       redirectTo: 'home',

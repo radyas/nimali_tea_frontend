@@ -51,7 +51,7 @@ export const MENU_ITEMS: NbMenuItem[] = [
   {
     title: 'Manage Customer',
     icon: {
-      icon: 'user',
+      icon: 'users',
       pack: 'font-awesome',
     },
     children: [
@@ -79,6 +79,23 @@ export const MENU_ITEMS: NbMenuItem[] = [
       {
         title: 'View Orders',
         link: '/orders/view',
+      },
+    ],
+  },
+  {
+    title: 'Manage Deliveries',
+    icon: {
+      icon: 'box',
+      pack: 'font-awesome',
+    },
+    children: [
+      {
+        title: 'Deliveries',
+        link: '/delivery/view',
+      },
+      {
+        title: 'Providers',
+        link: '/provider/view',
       },
     ],
   },
@@ -114,7 +131,7 @@ export const MENU_ITEMS: NbMenuItem[] = [
         title: 'View Warehouses',
         link: '/warehouses/view',
       },
-    ],   
+    ],
   },
   {
     title: 'Manage Supplier',

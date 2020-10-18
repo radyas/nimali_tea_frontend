@@ -48,7 +48,25 @@ import {NbAuthModule, NbPasswordAuthStrategy} from '@nebular/auth';
       strategies: [
         NbPasswordAuthStrategy.setup({
           name: 'email',
+          baseEndpoint: '',
+          login: {
+            endpoint: '/api/auth/token/login/',
+            method: 'post',
+            redirect: {
+              success: '/dashboard/',
+              failure: null, // stay on the same page
+            },
+          },
+          register: {
+            endpoint: '/api/auth/register',
+            method: 'post',
+          },
+          logout: {
+            endpoint: '/auth/token/logout/',
+            method: 'post',
+          },
         }),
+        
       ],
       forms: {},
     }),
