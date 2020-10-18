@@ -10,7 +10,7 @@ import { Delivery } from '../../../@core/data/delivery';
     {{renderValue}}
   `,
 })
-export class ProviderRenderComponent implements ViewCell, OnInit {
+export class DeliveryRenderComponent implements ViewCell, OnInit {
 
   renderValue: string;
 
@@ -18,6 +18,7 @@ export class ProviderRenderComponent implements ViewCell, OnInit {
   @Input() rowData: Delivery;
 
   ngOnInit() {
+    console.log(this.rowData)
     this.renderValue = this.rowData.provider.name.toString()
   }
 

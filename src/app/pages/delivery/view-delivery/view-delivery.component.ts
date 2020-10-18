@@ -2,8 +2,9 @@ import { Component, OnInit } from "@angular/core";
 import { LocalDataSource } from "ng2-smart-table";
 import { Delivery } from "../../../@core/data/delivery";
 import { DeliveryDefaults } from "../../../@core/data/deliveryDefault";
-import { DeliveryService } from "../../../@core/mock/delivery.service";
-import { ProviderRenderComponent } from '../../renderComponents/customerRenderComponent/providerRenderComponent';
+import { DeliveryService } from '../../../@core/mock/delivery.service';
+import { CustomerRenderComponent } from '../../renderComponents/customerRenderComponent/customerRenderComponent copy';
+import { DeliveryRenderComponent } from '../../renderComponents/customerRenderComponent/deliveryRenderComponent';
 
 @Component({
   selector: "ngx-view-delivery",
@@ -35,6 +36,16 @@ export class ViewDeliveryComponent implements OnInit {
 
   ngOnInit(): void {}
 
+  onDeleteConfirm(event) {
+    console.log("Delete")
+    console.log(event);
+    if (window.confirm('Are you sure you want to delete?')) {
+      event.confirm.resolve();
+    } else {
+      event.confirm.reject();
+    }
+  }
+
   settings = {
     columns: {
       id: {
@@ -42,14 +53,16 @@ export class ViewDeliveryComponent implements OnInit {
         filter: false,
       },
       order: {
-        title: "Order",
+        title: "Customer",
+        type: "custom",
         filter: false,
+        renderComponent: CustomerRenderComponent,
       },
       provider: {
         title: "Provider",
         filter: false,
         type: "custom",
-        renderComponent: ProviderRenderComponent,
+        renderComponent: DeliveryRenderComponent,
       },
       date: {
         title: "Date",
@@ -70,10 +83,6 @@ export class ViewDeliveryComponent implements OnInit {
       },
       value: {
         title: "Value",
-        filter: false,
-      },
-      type: {
-        title: "Type",
         filter: false,
       },
     },

@@ -1,0 +1,56 @@
+<div class="row justify-content-center">
+  <div class="col-md-8">
+    <nb-card>
+      <nb-card-header>Add Adjustments</nb-card-header>
+      <nb-card-body>
+        <form class="form-horizontal">
+          <br>
+          <div class="form-group row">
+            <label for="id" class="label col-sm-3 form-control-label">Name</label>
+            <div class="col-sm-9">
+              <nb-select id="id" name="id" [(ngModel)]="adjustments.employee" placeholder="Select ID" [(selected)]="selectedItem">
+                <nb-option *ngFor="let usr of users" value="{{usr.id}}">{{usr.username}}</nb-option>
+              </nb-select>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="description" class="label col-sm-3 form-control-label">Description</label>
+            <div class="col-sm-9">
+              <input type="text" nbInput fullWidth id="description" name="description" [(ngModel)]="adjustments.description" placeholder="Description">
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="type" class="label col-sm-3 form-control-label">Type</label>
+            <div class="col-sm-9">
+              <nb-radio-group id="type" name="type" [(ngModel)]="adjustments.type">
+                <nb-radio value="addition">Addition</nb-radio>
+                <nb-radio value="deduction">Deduction</nb-radio>
+              </nb-radio-group>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="date" class="label col-sm-3 form-control-label">Date</label>
+            <div class="col-sm-9">
+              <input nbInput type="date" id="date" name="date" [(ngModel)]="adjustments.date" placeholder="Date">
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="amount" class="label col-sm-3 form-control-label">Amount</label>
+            <div class="col-sm-9">
+              <input type="number" nbInput fullWidth id="amount" name="amount" [(ngModel)]="adjustments.amount" placeholder="Amount">
+            </div>
+          </div>
+          <br>
+          <div class="row">
+            <div class="col-md-3 offset-md-3">
+              <button nbButton hero status="success" (click)="onClick()">Submit</button>
+            </div>
+            <div class="col-md-3 offset-md-3">
+              <button nbButton hero status="warning">Cancel</button>
+            </div>
+          </div>
+        </form>
+      </nb-card-body>
+    </nb-card>
+  </div>
+</div>

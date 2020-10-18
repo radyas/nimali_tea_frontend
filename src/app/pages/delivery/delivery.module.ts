@@ -2,11 +2,11 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { AddDeliveryComponent } from './add-delivery/add-delivery.component';
 import { ViewDeliveryComponent } from './view-delivery/view-delivery.component';
-import { NbInputModule, NbCardModule, NbButtonModule, NbActionsModule, NbUserModule, NbCheckboxModule, NbRadioModule, NbDatepickerModule, NbSelectModule, NbIconModule, NbProgressBarModule, NbTabsetModule } from '@nebular/theme';
+import { NbInputModule, NbCardModule, NbButtonModule, NbActionsModule, NbUserModule, NbCheckboxModule, NbRadioModule, NbDatepickerModule, NbSelectModule, NbIconModule, NbProgressBarModule, NbTabsetModule, NbStepperModule } from '@nebular/theme';
 import { Ng2SmartTableModule } from 'ng2-smart-table';
 import { ThemeModule } from '../../@theme/theme.module';
 import { DeliveryRoutingModule } from './delivery-routing.module';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -18,6 +18,7 @@ import { FormsModule } from '@angular/forms';
     ThemeModule,
     NbInputModule,
     NbCardModule,
+    NbStepperModule,
     NbButtonModule,
     NbActionsModule,
     NbUserModule,
@@ -30,7 +31,8 @@ import { FormsModule } from '@angular/forms';
     Ng2SmartTableModule,
     NbTabsetModule,
     NbProgressBarModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ]
 })
 export class DeliveryModule { }

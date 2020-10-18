@@ -33,7 +33,7 @@ export class ViewOrdersComponent implements OnInit {
         title: 'Weight'
       },
       shipAddress: {
-        title: 'ShipAddress'
+        title: 'Ship Address'
       },
       date: {
         title: 'Date'
@@ -41,12 +41,12 @@ export class ViewOrdersComponent implements OnInit {
     },
     actions: {
       add: false,
-      edit: false,
-      delete: false,
+      // edit: false,
+      // delete: false,
     }
   };
 
- 
+
 
 }
 

@@ -1,16 +1,24 @@
 import { Observable } from 'rxjs';
-import { Customer } from './customer';
 
 
-export class Orders{
-    id:number;
+export class Orders {
+    id: number;
     brand: string;
-    weight:number;
-    shipaddress:string;
-    customer: Customer;
+    weight: string;
+    shipAddress: string;
+    product: string;
+    customer: string;
+    date: string;
+    // constructor(id, brand, weight, shipaddress) {
+    //   this.id = id;
+    //   this.brand = brand;
+    //   this.weight = weight;
+    //   this.shipaddress = shipaddress;
+    // }
 }
 export abstract class OrdersData {
-     abstract getOrders():Observable<Orders[]>;
+     abstract getOrders(): Observable<Orders[]>;
+     abstract addOrders(orders: Orders): Observable<Orders>;
 }
 
 

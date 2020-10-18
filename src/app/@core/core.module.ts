@@ -21,7 +21,12 @@ import { CustomerService } from './mock/customer.service';
 import { OrdersData } from './data/orders';
 import { OrdersService } from './mock/orders.service';
 import { ProductsData } from './data/products';
-
+import {AttendanceData} from './data/attendance';
+import {AttendanceService} from './mock/attendance.service';
+import {SalaryData} from './data/salary';
+import {SalaryService} from './mock/salary.service';
+import {AdjustmentsData} from './data/adjustments';
+import {AdjustmentsService} from './mock/adjustments.service';
 import { ProductsService } from './mock/products.service';
 import { ProviderService } from './mock/provider.service';
 import { ProviderData } from './data/provider';
@@ -31,7 +36,8 @@ import { SuppliersService } from './mock/suppliers.services';
 import { SuppliersData } from './data/suppliers';
 import { WarehousesData } from './data/warehouses';
 import { WarehousesService } from './mock/warehouses.service';
-
+import { DesignationData } from './data/designation';
+import { DesignationService } from './mock/designation.service';
 const socialLinks = [
   {
     url: 'https://github.com/akveo/nebular',
@@ -57,8 +63,12 @@ const DATA_SERVICES = [
   { provide: CustomerData, useClass: CustomerService },
   { provide: OrdersData, useClass: OrdersService },
   { provide: ProductsData, useClass: ProductsService },
+  { provide: AttendanceData, useClass: AttendanceService },
+  { provide: SalaryData, useClass: SalaryService},
+  { provide: AdjustmentsData, useClass: AdjustmentsService},
   { provide: ProviderData, useClass: ProviderService },
   { provide: DeliveryData, useClass: DeliveryService },
+  { provide: DesignationData, useClass: DesignationService},
   { provide: SuppliersData, useClass: SuppliersService },
   { provide: WarehousesData, useClass: WarehousesService },
 ];
