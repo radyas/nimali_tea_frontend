@@ -39,11 +39,11 @@ export class ViewDocumentComponent implements OnInit {
         title: 'Document Type',
         filter: false,
       },
-      issuedAuthority: {
+      issueAuthority: {
         title: 'Issued Authority',
         filter: false,
       },
-      createdDate: {
+      createDate: {
         title: 'Created Date',
         filter: false,
       },
