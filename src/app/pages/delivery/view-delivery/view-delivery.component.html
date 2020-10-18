@@ -21,7 +21,7 @@
                           {{ deliveryDefault.current | ngxNumberWithCommas }}
                         </div>
                         <nb-progress-bar
-                          [value]="deliveryDefault.getProgress()"
+                          [value]="deliveryDefault.getProgress()" status='success'
                         ></nb-progress-bar>
                         <div class="caption description">
                           <bdi>{{ "Deliveries made in this month" }}</bdi>

@@ -22,6 +22,7 @@ import {
   NbWindowModule,
 } from '@nebular/theme';
 import {NbAuthModule, NbPasswordAuthStrategy} from '@nebular/auth';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -33,7 +34,7 @@ import {NbAuthModule, NbPasswordAuthStrategy} from '@nebular/auth';
     AppRoutingModule,
 
     ThemeModule.forRoot(),
-
+    FormsModule,
     NbSidebarModule.forRoot(),
     NbMenuModule.forRoot(),
     NbDatepickerModule.forRoot(),
