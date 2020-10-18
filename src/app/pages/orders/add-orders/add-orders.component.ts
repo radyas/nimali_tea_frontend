@@ -30,12 +30,12 @@ export class AddOrdersComponent implements OnInit, OnDestroy {
       .subscribe(data => this.customers = data)
    }
   orders = new Orders();
- 
+
   ngOnInit(): void {
   }
   onClick(){
     this.ordService.addOrders(this.orders).subscribe(ord => console.log(this.orders))
-    
+
   }
   onClickCancel(){
     this.orders= new Orders();
@@ -46,5 +46,5 @@ export class AddOrdersComponent implements OnInit, OnDestroy {
     this.destroy$.next();
     this.destroy$.complete();
   }
-  
+
 }

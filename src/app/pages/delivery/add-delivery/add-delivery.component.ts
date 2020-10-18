@@ -18,8 +18,8 @@ export class AddDeliveryComponent implements OnInit,OnDestroy {
   private index: number = 0;
   delivery = new Delivery();
 
-  constructor(private orderService:OrdersService,private toastrService: NbToastrService) { 
- 
+  constructor(private orderService:OrdersService,private toastrService: NbToastrService) {
+
   }
 
   showToast(position) {
@@ -35,7 +35,7 @@ export class AddDeliveryComponent implements OnInit,OnDestroy {
   ngOnDestroy(): void {
     this.destroy$.next();
     this.destroy$.complete();
-    
+
   }
 
   ngOnInit(): void {

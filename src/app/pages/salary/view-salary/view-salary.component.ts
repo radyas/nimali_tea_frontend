@@ -1,19 +1,19 @@
 import { Component, OnInit } from '@angular/core';
-import {AttendanceData} from '../../../@core/data/attendance';
+import {SalaryData} from '../../../@core/data/salary';
 import {LocalDataSource} from 'ng2-smart-table';
 
 @Component({
-  selector: 'ngx-view-attendance',
-  templateUrl: './view-attendance.component.html',
-  styleUrls: ['./view-attendance.component.scss'],
+  selector: 'ngx-view-salary',
+  templateUrl: './view-salary.component.html',
+  styleUrls: ['./view-salary.component.scss'],
 })
-export class ViewAttendanceComponent implements OnInit {
+export class ViewSalaryComponent implements OnInit {
   data: LocalDataSource;
-  constructor(private attservice: AttendanceData) { }
+  constructor(private salservice: SalaryData) { }
 
   ngOnInit(): void {
     this.data = new LocalDataSource();
-    this.attservice.getAttendance()
+    this.salservice.getSalary()
       .subscribe(document => {
         this.data.load(document);
       });
@@ -24,20 +24,24 @@ export class ViewAttendanceComponent implements OnInit {
         title: 'ID',
         filter: false,
       },
-      date: {
-        title: 'Date',
+      month: {
+        title: 'Month',
         filter: false,
       },
-      type: {
-        title: 'Type',
+      addition: {
+        title: 'Total Additions',
         filter: false,
       },
-      inTime: {
-        title: 'In Time',
+      deduction: {
+        title: 'Total Deductions',
         filter: false,
       },
-      outTime: {
-        title: 'Out Time',
+      total: {
+        title: 'Net Salary',
+        filter: false,
+      },
+      issueDate: {
+        title: 'Issue Date',
         filter: false,
       },
       employee: {
@@ -51,5 +55,4 @@ export class ViewAttendanceComponent implements OnInit {
         delete: false,
       },
   };
-
 }
