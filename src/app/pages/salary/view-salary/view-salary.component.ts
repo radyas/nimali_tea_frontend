@@ -22,24 +22,31 @@ export class ViewSalaryComponent implements OnInit {
     columns: {
       id: {
         title: 'ID',
+        filter: false,
       },
       month: {
         title: 'Month',
+        filter: false,
       },
       addition: {
         title: 'Total Additions',
+        filter: false,
       },
       deduction: {
         title: 'Total Deductions',
+        filter: false,
       },
       total: {
         title: 'Net Salary',
+        filter: false,
       },
       issueDate: {
         title: 'Issue Date',
+        filter: false,
       },
       employee: {
         title: 'Employee',
+        filter: false,
       },
       },
       actions: {

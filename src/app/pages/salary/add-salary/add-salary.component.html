@@ -10,7 +10,7 @@
             <div class="form-group row">
               <label for="id" class="label col-sm-3 form-control-label">Name</label>
               <div class="col-sm-9">
-                <nb-select id="id" name="id" [(ngModel)]="salary.id" placeholder="Select ID" [(selected)]="selectedItem">
+                <nb-select id="id" name="id" [(ngModel)]="salary.employee" placeholder="Select ID" [(selected)]="selectedItem">
                   <nb-option *ngFor="let usr of users" value="{{usr.id}}">{{usr.username}}</nb-option>
                 </nb-select>
               </div>
@@ -30,7 +30,7 @@
             <div class="form-group row">
               <label for="basicsal" class="label col-sm-3 form-control-label">Basic Salary</label>
               <div class="col-sm-9">
-                <input type="text" nbInput fullWidth id="basicsal" name="basicsal" placeholder="BasicSalary">
+                <input type="text" nbInput fullWidth id="basicsal" name="basicsal" placeholder="Basic Salary" readonly>
               </div>
             </div>
             <div class="form-group row">

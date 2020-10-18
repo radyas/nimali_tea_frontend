@@ -8,19 +8,19 @@ import { OrdersService } from '../../../@core/mock/orders.service';
 @Component({
   selector: 'ngx-add-delivery',
   templateUrl: './add-delivery.component.html',
-  styleUrls: ['./add-delivery.component.scss']
+  styleUrls: ['./add-delivery.component.scss'],
 })
-export class AddDeliveryComponent implements OnInit,OnDestroy {
+export class AddDeliveryComponent implements OnInit, OnDestroy {
 
   private destroy$: Subject<void> = new Subject<void>();
   orders: Orders[];
   private index: number = 0;
 
-  constructor(private orderService:OrdersService,private toastrService: NbToastrService) { 
+  constructor(private orderService: OrdersService, private toastrService: NbToastrService) {
 
     this.orderService.getOrders()
       .pipe(takeUntil(this.destroy$))
-      .subscribe(data => this.orders = data)
+      .subscribe(data => this.orders = data);
 
   }
 

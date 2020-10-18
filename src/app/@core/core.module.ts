@@ -30,6 +30,8 @@ import { ProviderService } from './mock/provider.service';
 import { ProviderData } from './data/provider';
 import { DeliveryData } from './data/delivery';
 import { DeliveryService } from './mock/delivery.service';
+import {DesignationData} from "./data/designation";
+import {DesignationService} from "./mock/designation.service";
 
 const socialLinks = [
   {
@@ -60,6 +62,7 @@ const DATA_SERVICES = [
   { provide: AdjustmentsData, useClass: AdjustmentsService},
   { provide: ProviderData, useClass: ProviderService },
   { provide: DeliveryData, useClass: DeliveryService },
+  { provide: DesignationData, useClass: DesignationService},
 ];
 
 export class NbSimpleRoleProvider extends NbRoleProvider {
