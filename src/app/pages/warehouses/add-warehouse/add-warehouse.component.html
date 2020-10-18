@@ -4,24 +4,30 @@
         <nb-card-header>Add Warehouse Details</nb-card-header>
         <nb-card-body>
           <form class="form-horizontal">
-            <div class="form-group row">
+            <!-- <div class="form-group row">
                 <label for="WId" class="label col-sm-3 form-control-label">Warehouse ID</label>
                 <div class="col-sm-9">
-                  <input nbInput fullWidth id="WId" placeholder="Warehouse id">
+                  <input nbInput [(ngModel)] = "warehouses.id" name = idfullWidth id="WId" placeholder="Warehouse id">
                 </div>
-              </div>
+              </div> -->
               <div class="form-group row">
                 <label for="WName" class="label col-sm-3 form-control-label">Warehouse Name</label>
                 <div class="col-sm-9">
-                    <input nbInput fullWidth id="WName" placeholder="Warehouse name">
+                    <input nbInput [(ngModel)] = "warehouses.name" name = "name" fullWidth id="WName" placeholder="Warehouse name">
+                </div>
+              </div>
+              <div class="form-group row">
+                <label for="WAddress" class="label col-sm-3 form-control-label">Warehouse Address</label>
+                <div class="col-sm-9">
+                    <input nbInput [(ngModel)] = "warehouses.address" name = "address" fullWidth id="WAddress" placeholder="Warehouse Address">
                 </div>
               </div>
             <div class="row">
               <div class="col-md-3 offset-md-3">
-                <button nbButton hero status="success">Submit</button>
+                <button nbButton hero status="success" (click) = 'onClick()'>Submit</button>
               </div>
               <div class="col-md-3 offset-md-3">
-                 <button nbButton hero status="warning">Cancel</button>
+                 <button nbButton hero status="warning" (click) = 'cancel()' >Cancel</button>
               </div>
             </div>
           </form>

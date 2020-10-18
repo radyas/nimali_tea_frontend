@@ -6,6 +6,7 @@ import { WarehouseRoutingModule } from './warehouse-routing.module';
 import { NbButtonModule, NbCardModule, NbInputModule, NbIconModule } from '@nebular/theme';
 import { ThemeModule } from '../../@theme/theme.module';
 import { Ng2SmartTableModule } from 'ng2-smart-table';
+import { FormsModule } from '@angular/forms';
 
 
 
@@ -20,6 +21,7 @@ import { Ng2SmartTableModule } from 'ng2-smart-table';
     ThemeModule,
     Ng2SmartTableModule,
     NbIconModule,
+    FormsModule,
 
   ]
 })

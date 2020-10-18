@@ -8,4 +8,5 @@ export class Warehouses {
 
 export abstract class WarehousesData {
     abstract getWarehouses(): Observable<Warehouses[]>;
+    abstract addWarehouses(warehouse: Warehouses): Observable<Warehouses>;
 }
