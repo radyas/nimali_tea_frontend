@@ -1,1 +1,77 @@
-<p>add-employee works!</p>
+<div class="row justify-content-center">
+  <div class="col-md-8">
+    <nb-card>
+      <nb-card-header>Add Personal Details</nb-card-header>
+      <nb-card-body>
+        <form class="form-horizontal">
+          <div class="form-group row">
+            <label for="inputFname3" class="label col-sm-3 form-control-label">First Name</label>
+            <div class="col-sm-9">
+              <input type="text" nbInput [(ngModel)]="employee.first_name" name="name" fullWidth id="inputFname3"
+                     placeholder="First Name" required>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="last_name" class="label col-sm-3 form-control-label">Last Name</label>
+            <div class="col-sm-9">
+              <input type="text" nbInput [(ngModel)]="employee.last_name" name="name" fullWidth id="last_name"
+                     placeholder="Lasr Name" required>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="inputAddress" class="label col-sm-3 form-control-label">Address</label>
+            <div class="col-sm-9">
+              <input type="text" nbInput [(ngModel)]="employee.address" name="address" fullWidth id="inputAddress"
+                     placeholder="Address">
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="nic" class="label col-sm-3 form-control-label">NIC No</label>
+            <div class="col-sm-9">
+              <input type="text" nbInput [(ngModel)]="employee.nic" name="nic" fullWidth id="nic"
+                     placeholder="NIC No" required>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="inputPhone3" class="label col-sm-3 form-control-label">Contact Number</label>
+            <div class="col-sm-9">
+              <input type="number" nbInput [(ngModel)]="employee.phone" name="phone" fullWidth
+                     id="inputPhone3" placeholder="Contact number">
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="inputEmail3" class="label col-sm-3 form-control-label">Email</label>
+            <div class="col-sm-9">
+              <input type="email" nbInput [(ngModel)]="employee.email" name="email" fullWidth id="inputEmail3"
+                     placeholder="Email Address" [required]>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="dob" class="label col-sm-3 form-control-label">Date of Birth</label>
+            <div class="col-sm-9">
+              <input type="date" nbInput [(ngModel)]="employee.dob" name="dob" fullWidth id="dob"
+                     placeholder="Date Of Birth" [required]>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="department" class="label col-sm-3 form-control-label">Department</label>
+            <div class="col-sm-9">
+              <nb-select [(ngModel)]="employee.department_id" name="department_id" placeholder="Department" >
+                <nb-option *ngFor="let department of departments" value="{{department.id}}">{{department.name}}</nb-option>
+              </nb-select>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-3 offset-md-3">
+              <button nbButton hero status="success" (click)='onClick()'>Submit</button>
+            </div>
+            <div class="col-md-3 offset-md-3">
+              <button nbButton hero status="warning" (click)='onClickCancel()'>Cancel</button>
+            </div>
+          </div>
+        </form>
+      </nb-card-body>
+    </nb-card>
+  </div>
+</div>

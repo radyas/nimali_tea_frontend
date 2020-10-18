@@ -6,4 +6,5 @@ export class Department {
 }
 export abstract class DepartmentData {
     abstract getDepartments(): Observable<Department[]>;
+    abstract addDepartment(department: Department): Observable<Department>;
 }
