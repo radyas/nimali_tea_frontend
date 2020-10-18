@@ -4,7 +4,7 @@ import {User, UserData} from '../../../@core/data/users';
 import {takeUntil} from 'rxjs/operators';
 import {Salary, SalaryData} from '../../../@core/data/salary';
 import {Adjustments, AdjustmentsData} from '../../../@core/data/adjustments';
-import {Designation, DesignationData} from "../../../@core/data/designation";
+import {Designation, DesignationData} from '../../../@core/data/designation';
 
 @Component({
   selector: 'ngx-add-salary',
@@ -61,13 +61,17 @@ export class AddSalaryComponent implements OnInit, OnDestroy {
         for (let entry of this.adjustment) {
           let dat = new Date(entry.date);
           let mont = dat.getMonth() + 1;
+          // @ts-ignore
           if (entry.type === 'addition' && entry.employee === emp && mont === this.salary.month) {
             let num = Number(entry.amount);
             add = add + num;
           }
-          else if (entry.type === 'deduction' && entry.employee === emp && mont === this.salary.month) {
-            let num = Number(entry.amount);
-            ded = ded + num;
+          else { // @ts-ignore
+            // @ts-ignore
+            if (entry.type === 'deduction' && entry.employee === emp && mont === this.salary.month) {
+                        let num = Number(entry.amount);
+                        ded = ded + num;
+                      }
           }
           this.totalAdd = add;
           this.totalDed = ded;
