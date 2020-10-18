@@ -5,17 +5,17 @@ import { OrdersData } from '../../../@core/data/orders';
 @Component({
   selector: 'ngx-view-orders',
   templateUrl: './view-orders.component.html',
-  styleUrls: ['./view-orders.component.scss']
+  styleUrls: ['./view-orders.component.scss'],
 })
 export class ViewOrdersComponent implements OnInit {
   data: LocalDataSource;
 
-  constructor(private orderService: OrdersData){
+  constructor(private orderService: OrdersData) {
     this.data = new LocalDataSource;
 
     this.orderService.getOrders().subscribe(data => {
-      this.data.load(data)
-    })
+      this.data.load(data);
+    });
   }
 
   ngOnInit(): void {
@@ -24,29 +24,27 @@ export class ViewOrdersComponent implements OnInit {
   settings = {
     columns: {
       id: {
-        title: 'ID'
+        title: 'ID',
       },
       brand: {
-        title: 'Brand'
+        title: 'Brand',
       },
       weight: {
-        title: 'Weight'
+        title: 'Weight',
       },
       shipAddress: {
-        title: 'ShipAddress'
+        title: 'ShipAddress',
       },
       date: {
-        title: 'Date'
+        title: 'Date',
       },
     },
     actions: {
       add: false,
       edit: false,
       delete: false,
-    }
+    },
   };
-
- 
 
 }
 
