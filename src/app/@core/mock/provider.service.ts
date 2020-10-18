@@ -21,17 +21,17 @@ export class ProviderService extends ProviderData{
     }
 
     
-    addDelivery(provider : Provider):Observable<any>{
+    addProvider(provider : Provider):Observable<any>{
         let apiUrl = 'http://localhost:4200/api/provider/'
         return this.http.post(apiUrl , provider, httpOptions)
     }
     
-    updateDelivery(provider : Provider):Observable<any>{
+    updateProvider(provider : Provider):Observable<any>{
         let apiUrl = 'http://localhost:4200/api/provider/' + provider.id +'/'
         return this.http.put(apiUrl , provider, httpOptions)
     }
     
-    deleteDelivery(provider : Provider):Observable<any>{
+    deleteProvider(provider : Provider):Observable<any>{
         let apiUrl = 'http://localhost:4200/api/provider/'+ provider.id + '/'
         return this.http.delete(apiUrl, httpOptions)
     }
