@@ -1,0 +1,92 @@
+<div class="row justify-content-center">
+  <div class="col-md-11">
+    <nb-card>
+      <nb-card-header>Add Salary</nb-card-header>
+      <nb-card-body>
+        <form class="form-horizontal">
+          <fieldset>
+            <legend>Details</legend>
+            <br>
+            <div class="form-group row">
+              <label for="id" class="label col-sm-3 form-control-label">Name</label>
+              <div class="col-sm-9">
+                <nb-select id="id" name="id" [(ngModel)]="salary.employee" placeholder="Select ID" [(selected)]="selectedItem">
+                  <nb-option *ngFor="let usr of users" value="{{usr.id}}">{{usr.username}}</nb-option>
+                </nb-select>
+              </div>
+            </div>
+            <div class="form-group row">
+              <label for="month" class="label col-sm-3 form-control-label">Month</label>
+              <div class="col-sm-9">
+                <input type="number" nbInput fullWidth id="month" name="month" [(ngModel)]="salary.month" placeholder="Month">
+              </div>
+            </div>
+            <div class="form-group row">
+              <label for="date" class="label col-sm-3 form-control-label">Issue Date</label>
+              <div class="col-sm-9">
+                <input nbInput type="date" id="date" name="date" [(ngModel)]="salary.issueDate" placeholder="Date">
+              </div>
+            </div>
+            <div class="form-group row">
+              <label for="basicsal" class="label col-sm-3 form-control-label">Basic Salary</label>
+              <div class="col-sm-9">
+                <input type="text" nbInput fullWidth id="basicsal" name="basicsal" placeholder="Basic Salary" readonly>
+              </div>
+            </div>
+            <div class="form-group row">
+              <div class="col-md-3 offset-md-3"></div>
+              <div class="col-md-3 offset-md-3">
+                <button nbButton hero status="success" (click)="onCalculate()">Calculate</button>
+              </div>
+            </div>
+          </fieldset>
+          <div class="form-group row">
+            <div class="col-6">
+              <fieldset>
+                <legend>Additions</legend>
+                <br>
+                <div class="form-group row">
+                  <label for="addition" class="label col-sm-3 form-control-label">Total Additions</label>
+                  <div class="col-sm-9">
+                    <input type="text" nbInput fullWidth id="addition" name="addition" [(ngModel)]="salary.addition" placeholder="Additions" readonly>
+                  </div>
+                </div>
+              </fieldset>
+            </div>
+            <div class="col-6">
+              <fieldset>
+                <legend>Deductions</legend>
+                <br>
+                <div class="form-group row">
+                  <label for="deduction" class="label col-sm-3 form-control-label">Total Deductions</label>
+                  <div class="col-sm-9">
+                    <input type="text" nbInput fullWidth id="deduction" name="deduction" [(ngModel)]="salary.deduction" placeholder="Deductions" readonly>
+                  </div>
+                </div>
+              </fieldset>
+            </div>
+          </div>
+          <fieldset>
+            <legend>Total</legend>
+            <br>
+            <div class="form-group row">
+              <label for="salary" class="label col-sm-3 form-control-label">Total Salary</label>
+              <div class="col-sm-9">
+                <input type="text" nbInput fullWidth id="salary" name="salary" [(ngModel)]="salary.total" placeholder="Salary" readonly>
+              </div>
+            </div>
+          </fieldset>
+          <br>
+          <div class="row">
+            <div class="col-md-3 offset-md-3">
+              <button nbButton hero status="success" (click)="onClick()">Submit</button>
+            </div>
+            <div class="col-md-3 offset-md-3">
+              <button nbButton hero status="warning">Cancel</button>
+            </div>
+          </div>
+        </form>
+      </nb-card-body>
+    </nb-card>
+  </div>
+</div>

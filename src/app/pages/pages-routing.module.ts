@@ -34,6 +34,36 @@ const routes: Routes = [{
         .then(m => m.DepartmentModule),
     },
     {
+      path: 'attendance',
+      loadChildren: () => import('./attendance/attendance.module')
+        .then(m => m.AttendanceModule),
+    },
+    {
+      path: 'salary',
+      loadChildren: () => import('./salary/salary.module')
+        .then(m => m.SalaryModule),
+    },
+    {
+      path: 'orders',
+      loadChildren: () => import('./orders/orders.module')
+        .then(m => m.OrdersModule),
+    },
+    {
+      path: 'products',
+      loadChildren: () => import('./products/products.module')
+        .then(m => m.ProductsModule),
+    },
+    {
+      path: 'supplier',
+      loadChildren: () => import('./supplier/supplier.module')
+        .then(m => m.SupplierModule),
+    },
+    {
+      path: 'warehouses',
+      loadChildren: () => import('./warehouses/warehouses.module')
+        .then(m => m.WarehousesModule),
+    },
+    {
       path: 'provider',
       loadChildren: () => import('./provider/provider.module')
         .then(m => m.ProviderModule),

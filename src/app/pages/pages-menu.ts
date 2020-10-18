@@ -32,6 +32,23 @@ export const MENU_ITEMS: NbMenuItem[] = [
     ],
   },
   {
+    title: 'Manage Attendance',
+    icon: {
+      icon: 'user-check',
+      pack: 'font-awesome',
+    },
+    children: [
+      {
+        title: 'Mark Attendance',
+        link: '/attendance/add',
+      },
+      {
+        title: 'View Attendance',
+        link: '/attendance/view',
+      },
+    ],
+  },
+  {
     title: 'Manage Department',
     icon: {
       icon: 'building',
@@ -83,7 +100,51 @@ export const MENU_ITEMS: NbMenuItem[] = [
     ],
   },
   {
-    title: 'Deliveries',
+    title: 'Manage Payroll',
+    icon: {
+      icon: 'cash-register',
+      pack: 'font-awesome',
+    },
+    children: [
+      {
+        title: 'Manage Salary',
+        icon: {
+          icon: 'wallet',
+          pack: 'font-awesome',
+        },
+        children: [
+          {
+            title: 'Add Salary',
+            link: '/salary/addsal',
+          },
+          {
+            title: 'View Salary',
+            link: '/salary/viewsal',
+          },
+        ],
+      },
+      {
+        title: 'Manage Adjustments',
+        icon: {
+          icon: 'money-bill',
+          pack: 'font-awesome',
+        },
+        children: [
+          {
+            title: 'Add Adjustments',
+            link: '/salary/addadj',
+          },
+          {
+            title: 'View Adjustments',
+            link: '/salary/viewadj',
+          },
+        ],
+      },
+    ],
+  },
+  {
+    title: 'Manage Deliveries',
+
     icon: {
       icon: 'box',
       pack: 'font-awesome',
@@ -95,4 +156,55 @@ export const MENU_ITEMS: NbMenuItem[] = [
       },
     ],
   },
+   {
+    title: 'Manage Products',
+    icon: {
+      icon: 'box-open',
+      pack: 'font-awesome',
+    },
+    children: [
+      {
+        title: 'Add Products',
+        link: '/products/add',
+      },
+      {
+        title: 'View Products',
+        link: '/products/view',
+      },
+    ],
+  },
+     {
+    title: 'Manage Warehouse',
+    icon: {
+      icon: 'luggage-cart',
+      pack: 'font-awesome',
+    },
+    children: [
+      {
+        title: 'Add Warehouse',
+        link: '/warehouses/add',
+      },
+      {
+        title: 'View Warehouses',
+        link: '/warehouses/view',
+      },
+    ],
+  },
+  {
+    title: 'Manage Supplier',
+    icon: {
+      icon: 'truck',
+      pack: 'font-awesome',
+    },
+    children: [
+      {
+        title: 'Add Supplier',
+        link: '/supplier/add',
+      },
+      {
+        title: 'View Supplier',
+        link: '/supplier/view',
+      },
+    ],
+  }
 ];

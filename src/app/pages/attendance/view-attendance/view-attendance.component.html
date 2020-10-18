@@ -1,1 +1,17 @@
-<p>view-attendance works!</p>
+<div class="row f-flex justify-content-center">
+  <nb-card>
+    <nb-card-body>
+      <h1 align="center">Attendance Details</h1>
+      <div class="row mb-4 mt-2 mr-2 justify-content-end">
+        <button routerLink="/attendance/add" class="btn btn-outline-dark">
+          <nb-icon icon="user-check" pack="font-awesome"></nb-icon>
+          <span class="ml-2">Mark Attendance</span>
+        </button>
+      </div>
+      <div class="row m-2">
+        <ng2-smart-table [settings]="settings" [source]="data"></ng2-smart-table>
+      </div>
+    </nb-card-body>
+  </nb-card>
+</div>
+

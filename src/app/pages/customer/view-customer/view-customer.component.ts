@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { LocalDataSource } from 'ng2-smart-table';
-import { Customer,CustomerData } from '../../../@core/data/customer';
+import { Customer, CustomerData } from '../../../@core/data/customer';
 
 @Component({
   selector: 'ngx-view-customer',
   templateUrl: './view-customer.component.html',
-  styleUrls: ['./view-customer.component.scss']
+  styleUrls: ['./view-customer.component.scss'],
 })
 export class ViewCustomerComponent implements OnInit {
   data: LocalDataSource;
@@ -14,8 +14,8 @@ export class ViewCustomerComponent implements OnInit {
     this.data = new LocalDataSource();
 
     this.custService.getCustomers().subscribe(data => {
-      this.data.load(data)
-    })
+      this.data.load(data);
+    });
    }
 
   ngOnInit(): void {
@@ -24,26 +24,26 @@ export class ViewCustomerComponent implements OnInit {
   settings = {
     columns: {
       id: {
-        title: 'ID'
+        title: 'ID',
       },
       name: {
-        title: 'Customer Name'
+        title: 'Customer Name',
       },
       address: {
-        title: 'Address'
+        title: 'Address',
       },
       phone: {
-        title: 'Phone number'
+        title: 'Phone number',
       },
       email: {
-        title: 'Email'
+        title: 'Email',
       },
     },
     actions: {
       add: false,
       edit: false,
       delete: false,
-    }
+    },
   };
 
 }

@@ -8,7 +8,7 @@ describe('ViewDepartmentComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ViewDepartmentComponent ]
+      declarations: [ ViewDepartmentComponent ],
     })
     .compileComponents();
   }));

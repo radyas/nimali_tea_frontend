@@ -1,3 +1,4 @@
+import { NbIconModule, NbInputModule } from '@nebular/theme';
 /**
  * @license
  * Copyright Akveo. All Rights Reserved.
@@ -22,6 +23,7 @@ import {
 } from '@nebular/theme';
 import {NbAuthModule, NbPasswordAuthStrategy} from '@nebular/auth';
 import { FormsModule } from '@angular/forms';
+
 
 @NgModule({
   declarations: [AppComponent],

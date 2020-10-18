@@ -40,6 +40,7 @@ export class AddDeliveryComponent implements OnInit,OnDestroy {
       console.log(this.orders.length);
       console.log(this.orders)
     });
+
   }
 
   showToast(position) {
@@ -54,6 +55,7 @@ export class AddDeliveryComponent implements OnInit,OnDestroy {
   ngOnDestroy(): void {
     this.destroy$.next();
     this.destroy$.complete();
+
   }
 
   ngOnInit(): void {

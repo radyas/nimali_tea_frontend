@@ -1,0 +1,73 @@
+<div class="row justify-content-center">
+    <div class="col-md-8">
+      <nb-card>
+        <nb-card-header>Add Product Details</nb-card-header>
+        <nb-card-body>
+          <form class="form-horizontal">
+            <div class="form-group row">
+                <label for="pid" class="label col-sm-3 form-control-label">Product ID</label>
+                <div class="col-sm-9">
+                  <input type = "text" nbInput nbInput [(ngModel)] = "Products.id" name = "id" fullWidth id="pid" placeholder="product id">
+                </div>
+              </div>
+              <div class="form-group row">
+                <label for="Pname" class="label col-sm-3 form-control-label">Product Name</label>
+                <div class="col-sm-9">
+                    <input type = "text" nbInput [(ngModel)] = "Products.name" name="name" fullWidth id="Pname" placeholder="product name">
+                </div>
+              </div>
+              <div class="form-group row">
+                <label for="Reference number" class="label col-sm-3 form-control-label">Reference number</label>
+                <div class="col-sm-9">
+                  <input  type = "text" nbInput [(ngModel)] = "Products.reference_number" name="reference_number" fullWidth id="Reference number" placeholder="Reference number">
+                </div>
+              </div>
+             <div class="form-group row">
+                <label for="quantity" class="label col-sm-3 form-control-label">Quantity</label>
+                <div class="col-sm-9">
+                    <input type="Number" nbInput [(ngModel)] = "Products.quantity" name="quantity" fullWidth id="quantity" placeholder="Quantity">
+                </div>
+              </div>
+            <div class="form-group row">
+                <label for="Price" class="label col-sm-3 form-control-label">Price</label>
+                <div class="col-sm-9">
+                  <input type="Number" nbInput [(ngModel)] = "Products.price" name="price" fullWidth id="Price" placeholder="Price">
+                </div>
+              </div>
+            <div class="form-group row">
+                <label for="Type" class="label col-sm-3 form-control-label">Type</label>
+                <div class="col-sm-9">
+                  <input type="text" nbInput [(ngModel)] = "Products.type" name="type" fullWidth id="Type" placeholder="Type">
+                </div>
+              </div>
+              <div class="form-group row">
+                <label for="Location" class="label col-sm-3 form-control-label">Location</label>
+                <div class="col-sm-9">
+                  <input type="text" nbInput [(ngModel)] = "Products.location" name="location" fullWidth id="Location" placeholder="Location">
+                </div>
+              </div>
+              <div class="form-group row">
+                <label for="Weight" class="label col-sm-3 form-control-label">Weight</label>
+                <div class="col-sm-9">
+                  <input type="Number" nbInput [(ngModel)] = "Products.weight" name="weight" fullWidth id="Weight" placeholder="Weight">
+                </div>
+              </div>
+              <div class="form-group row">
+                <label for="Description" class="label col-sm-3 form-control-label">Description</label>
+                <div class="col-sm-9">
+                  <input type="text" nbInput [(ngModel)] = "Products.description" name="description" fullWidth id="Description" placeholder="Description">
+                </div>
+              </div>
+            <div class="row">
+              <div class="col-md-3 offset-md-3">
+                <button nbButton hero status="success" (click) = 'onClick()'>Submit</button>
+              </div>
+              <div class="col-md-3 offset-md-3">
+                 <button nbButton hero status="warning">Cancel</button>
+              </div>
+            </div>
+          </form>
+        </nb-card-body>
+      </nb-card>
+    </div>
+  </div>

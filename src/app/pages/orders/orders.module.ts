@@ -6,6 +6,7 @@ import { OrdersRoutingModule } from './orders-routing.module';
 import { ThemeModule } from '../../@theme/theme.module';
 import { NbInputModule, NbCardModule, NbButtonModule, NbActionsModule, NbUserModule, NbCheckboxModule, NbRadioModule, NbDatepickerModule, NbSelectModule, NbIconModule } from '@nebular/theme';
 import { Ng2SmartTableModule } from 'ng2-smart-table';
+import { FormsModule } from '@angular/forms';
 
 
 
@@ -28,6 +29,7 @@ import { Ng2SmartTableModule } from 'ng2-smart-table';
     NbSelectModule,
     Ng2SmartTableModule,
     NbCardModule,
+    FormsModule,
   ]
 })
 export class OrdersModule { }

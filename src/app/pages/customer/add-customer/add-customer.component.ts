@@ -16,10 +16,10 @@ export class AddCustomerComponent implements OnInit {
   }
 
   onClick() {
-    this.custService.addCustomer(this.customer).subscribe(cust => console.log(this.customer))
+    this.custService.addCustomer(this.customer).subscribe(cust => console.log(this.customer));
   }
+  onClickCancel(){
+    this.customer= new Customer();
 
-  test(){
-    this.customer.name = "blah"
   }
 }
