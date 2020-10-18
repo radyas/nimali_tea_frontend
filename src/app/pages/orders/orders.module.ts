@@ -4,7 +4,7 @@ import { AddOrdersComponent } from './add-orders/add-orders.component';
 import { ViewOrdersComponent } from './view-orders/view-orders.component';
 import { OrdersRoutingModule } from './orders-routing.module';
 import { ThemeModule } from '../../@theme/theme.module';
-import { NbInputModule, NbCardModule, NbButtonModule, NbActionsModule, NbUserModule, NbCheckboxModule, NbRadioModule, NbDatepickerModule, NbSelectModule, NbIconModule } from '@nebular/theme';
+import { NbInputModule, NbCardModule, NbButtonModule, NbActionsModule, NbUserModule, NbCheckboxModule, NbRadioModule, NbDatepickerModule, NbSelectModule, NbIconModule, NbProgressBarModule, NbTabsetModule } from '@nebular/theme';
 import { Ng2SmartTableModule } from 'ng2-smart-table';
 import { FormsModule } from '@angular/forms';
 
@@ -30,6 +30,9 @@ import { FormsModule } from '@angular/forms';
     Ng2SmartTableModule,
     NbCardModule,
     FormsModule,
+    NbTabsetModule,
+    NbProgressBarModule,
+
   ]
 })
 export class OrdersModule { }

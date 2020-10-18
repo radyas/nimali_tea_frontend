@@ -1,4 +1,5 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
+import { NbToastrService } from '@nebular/theme';
 import { LocalDataSource } from 'ng2-smart-table';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
@@ -15,10 +16,12 @@ export class AddOrdersComponent implements OnInit, OnDestroy {
   private destroy$: Subject<void> = new Subject<void>();
   products: Products[];
   customers: Customer[];
+  private index: number = 0;
 
   constructor(private productsService: ProductsData,
               private customerService: CustomerData,
-              private ordService:OrdersData
+              private ordService:OrdersData,
+              private toastrService: NbToastrService
             ) {
 
     this.productsService.getProducts()
@@ -28,7 +31,15 @@ export class AddOrdersComponent implements OnInit, OnDestroy {
     this.customerService.getCustomers()
       .pipe(takeUntil(this.destroy$))
       .subscribe(data => this.customers = data)
+
    }
+   showToast(position) {
+    this.toastrService.show(
+      'This is super toast message',
+      `This is toast number: ${++this.index}`,
+      { position });
+  }
+
   orders = new Orders();
 
   ngOnInit(): void {

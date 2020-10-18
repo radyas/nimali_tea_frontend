@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { LocalDataSource } from 'ng2-smart-table';
 import { OrdersData } from '../../../@core/data/orders';
+import { ProductRenderComponent } from '../../renderComponents/ordersRenderComponent/ProductRenderComponent';
 
 @Component({
   selector: 'ngx-view-orders',
@@ -25,6 +26,12 @@ export class ViewOrdersComponent implements OnInit {
     columns: {
       id: {
         title: 'ID'
+      },
+      product: {
+        title: "Product",
+        filter: false,
+        type: "custom",
+        renderComponent: ProductRenderComponent,
       },
       brand: {
         title: 'Brand'

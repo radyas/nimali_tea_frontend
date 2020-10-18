@@ -1,4 +1,6 @@
 import { Observable } from 'rxjs';
+import { Customer } from './customer';
+import { Products } from './products';
 
 
 export class Orders {
@@ -6,8 +8,8 @@ export class Orders {
     brand: string;
     weight: string;
     shipAddress: string;
-    product: string;
-    customer: string;
+    product: Products;
+    customer: Customer;
     date: string;
     // constructor(id, brand, weight, shipaddress) {
     //   this.id = id;
@@ -19,6 +21,8 @@ export class Orders {
 export abstract class OrdersData {
      abstract getOrders(): Observable<Orders[]>;
      abstract addOrders(orders: Orders): Observable<Orders>;
+     abstract updateOrders(orders: Orders): Observable<Orders>;
+     abstract deleteOrders(orders: Orders): Observable<any>;
 }
 
 

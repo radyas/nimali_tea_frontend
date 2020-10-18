@@ -8,6 +8,7 @@
                 <label for="inputpid3" class="label col-sm-3 form-control-label">Product</label>
                 <div class="col-sm-9">
                   <nb-select [(ngModel)]="orders.product" name="product"placeholder="Select Product" >
+                    <!-- <nb-select placeholder="Select the product" > -->
                         <nb-option *ngFor="let product of products" value="{{product.id}}">{{product.name}}</nb-option>
                     </nb-select>
                 </div>
@@ -16,6 +17,7 @@
                 <label for="inputcid3" class="label col-sm-3 form-control-label">Customer</label>
                 <div class="col-sm-9">
                   <nb-select [(ngModel)]="orders.customer" name="customer"placeholder="Select Customer" >
+                  <!-- <nb-select placeholder="Select the customer" >   -->
                     <nb-option *ngFor="let customer of customers" value="{{customer.id}}">{{customer.name}}</nb-option>
                 </nb-select>
                 </div>
@@ -42,7 +44,7 @@
               <label for="inputDate3" class="label col-sm-3 form-control-label">Date</label>
               <div class="col-sm-9">
                 <input [(ngModel)]="orders.date" name="date" nbInput placeholder="Pick Date" type="date">
-                
+
               </div>
             </div>
             <div class="form-group row">
@@ -51,7 +53,7 @@
                   <input type="text" nbInput [(ngModel)]="orders.shipAddress" name="shipAddress" fullWidth id="inputAddress3" placeholder="shipping address">
                 </div>
               </div>
-            
+
             <div class="row">
               <div class="col-md-3 offset-md-3">
                 <button nbButton hero status="success"(click)='onClick()'>Submit</button>
@@ -61,6 +63,9 @@
               </div>
             </div>
           </form>
+          <div class="col-md-3 ">
+            <button (click)="showToast('bottom-left')" nbButton hero status="info">Demo Data</button>
+         </div>
         </nb-card-body>
       </nb-card>
     </div>

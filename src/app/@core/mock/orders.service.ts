@@ -22,4 +22,13 @@ export class OrdersService extends OrdersData{
         let apiUrl = 'http://localhost:4200/api/orders/'
         return this.http.post<Orders>(apiUrl,orders,httpOptions);
     }
+    updateOrders(orders:Orders):Observable<any>{
+        let apiUrl = 'http://localhost:4200/api/orders/' + orders.id + '/'
+        return this.http.put<Orders>(apiUrl,orders,httpOptions);
+    }
+    deleteOrders(orders:Orders):Observable<any>{
+        let apiUrl = 'http://localhost:4200/api/orders/' + orders.id + '/'
+        return this.http.delete<Orders>(apiUrl,httpOptions);
+    }
+
 }
