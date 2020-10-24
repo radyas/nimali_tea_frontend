@@ -154,6 +154,10 @@ export const MENU_ITEMS: NbMenuItem[] = [
         title: 'Deliveries',
         link: '/delivery/view',
       },
+      {
+        title: 'Providers',
+        link: '/provider/view',
+      },
     ],
   },
    {

@@ -1,4 +1,4 @@
-<nb-card size="medium">
+<nb-card>
   <nb-card-body>
     <div class="row d-flex justify-content-end">
       <button routerLink="/delivery/add" nbButton hero status="primary">
@@ -30,6 +30,24 @@
                     </div>
                   </nb-card-body>
                 </nb-card>
+                <nb-card>
+                  <nb-card-body>
+                    <div class="row d-flex justify-content-center">
+                      <nb-card-body>
+                        <div class="subtitle">{{ "Pending Deliveries" }}</div>
+                        <div class="h3">
+                          {{ 1 | ngxNumberWithCommas }} of 2
+                        </div>
+                        <nb-progress-bar
+                          [value]="50" status='success'
+                        ></nb-progress-bar>
+                        <div class="caption description">
+                          <bdi>{{ "Currently active deliveries" }}</bdi>
+                        </div>
+                      </nb-card-body>
+                    </div>
+                  </nb-card-body>
+                </nb-card>
               </div>
             </div>
           </nb-tab>
@@ -41,7 +59,6 @@
                   <ng2-smart-table
                     [settings]="settings"
                     [source]="data"
-                    (deleteConfirm)="onDeleteConfirm($event)"
                   ></ng2-smart-table>
                 </div>
               </nb-card-body>

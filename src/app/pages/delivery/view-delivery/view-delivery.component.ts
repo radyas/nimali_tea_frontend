@@ -37,7 +37,7 @@ export class ViewDeliveryComponent implements OnInit {
   ngOnInit(): void {}
 
   onDeleteConfirm(event) {
-    console.log("Delete")
+    console.log('Delete');
     console.log(event);
     if (window.confirm('Are you sure you want to delete?')) {
       event.confirm.resolve();
@@ -49,47 +49,52 @@ export class ViewDeliveryComponent implements OnInit {
   settings = {
     columns: {
       id: {
-        title: "ID",
+        title: 'ID',
         filter: false,
       },
       order: {
-        title: "Customer",
-        type: "custom",
-        filter: false,
+        title: 'Customer',
+        type: 'custom',
         renderComponent: CustomerRenderComponent,
+        filter: false,
       },
       provider: {
-        title: "Provider",
+        title: 'Provider',
         filter: false,
-        type: "custom",
+        type: 'custom',
         renderComponent: DeliveryRenderComponent,
       },
       date: {
-        title: "Date",
+        title: 'Date',
         filter: false,
       },
       pickupDate: {
-        title: "Pickup Date",
+        title: 'Pickup Date',
         filter: false,
       },
 
       status: {
-        title: "Status",
-        filter: false,
+        title: 'Status',
+        filter: true,
       },
       weight: {
-        title: "Weight",
-        filter: false,
-      },
-      value: {
-        title: "Value",
+        title: 'Weight',
         filter: false,
       },
     },
     actions: {
       add: false,
-      edit: false,
-      delete: false,
+      edit: true,
+      delete: true,
+    },
+    delete: {
+      deleteConfirm : true,
+      deleteButtonContent: '<i class="nb-trash"></i>',
+    },
+    edit: {
+      editButtonContent: '<i class="nb-edit"></i>',
+      saveButtonContent: '<i class="nb-checkmark"></i>',
+      cancelButtonContent: '<i class="nb-close"></i>',
     },
   };
 }

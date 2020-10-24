@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { LocalDataSource } from 'ng2-smart-table';
-import { ProviderData } from '../../../@core/data/provider';
+import { Provider, ProviderData } from '../../../@core/data/provider';
 
 @Component({
   selector: 'ngx-view-provider',
@@ -9,6 +9,7 @@ import { ProviderData } from '../../../@core/data/provider';
 })
 export class ViewProviderComponent implements OnInit {
   data: LocalDataSource;
+  provider = new Provider();
 
   constructor(private providerService: ProviderData) {
     this.data = new LocalDataSource;
@@ -36,6 +37,19 @@ export class ViewProviderComponent implements OnInit {
       delete: false,
     }
   };
+
+ 
+  addDeliveryProvider() {
+    this.providerService.addProvider(this.provider).subscribe(dept => {
+      console.log(dept);
+      this.provider.name = "";
+    });
+
+
+
+
+    
+  }
 
 
 }

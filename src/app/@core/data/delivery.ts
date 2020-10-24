@@ -13,6 +13,9 @@ export class Delivery{
     value:string;
     address:string;
     order: Orders;
+    order_id: number;
+    provider_id :number;
+
     
 }
 export abstract class DeliveryData {

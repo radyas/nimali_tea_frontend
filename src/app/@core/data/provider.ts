@@ -7,6 +7,7 @@ export class Provider{
 }
 export abstract class ProviderData {
      abstract getProviders():Observable<Provider[]>;
+     abstract addProvider(provider : Provider):Observable<Provider>;
 }
 
 

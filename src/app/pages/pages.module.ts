@@ -17,6 +17,7 @@ import {ProviderModule} from './provider/provider.module';
 import {ReportsModule} from './reports/reports.module';
 import {SalaryModule} from './salary/salary.module';
 import {VoucherModule} from './voucher/voucher.module';
+import { NewComponent } from './new/new.component';
 
 @NgModule({
   imports: [
@@ -41,6 +42,7 @@ import {VoucherModule} from './voucher/voucher.module';
   ],
   declarations: [
     PagesComponent,
+    NewComponent,
   ],
 })
 export class PagesModule {
