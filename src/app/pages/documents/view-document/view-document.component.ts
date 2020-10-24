@@ -25,38 +25,54 @@ export class ViewDocumentComponent implements OnInit {
     columns: {
       name: {
         title: 'Document Name',
-        filter: false,
+        // filter: false,
       },
       docCode: {
         title: "Document Code",
-        filter: false,
+        // filter: false,
       },
       status: {
         title: 'Status',
-        filter: false,
+        // filter: false,
       },
       docType: {
-        title: 'Document Type',
-        filter: false,
+      title: 'Document Type',
+      // filter: false,
       },
       issueAuthority: {
         title: 'Issued Authority',
-        filter: false,
+        // filter: false,
       },
       createDate: {
         title: 'Created Date',
-        filter: false,
+        // filter: false,
       },
       department: {
         title: 'Department',
-        filter: false,
+        // filter: false,
       },
     },
     actions: {
-      add: false,
-      edit: false,
-      delete: false,
-    }
+      add: true,
+      edit: true,
+       delete: true,
+    } ,
+    add: {
+      addButtonContent: '<i  class="ion-ios-plus-outline"></i>',
+      createButtonContent: '<i class="ion-checkmark" ></i>',
+      cancelButtonContent: '<i class="ion-close"></i>',
+    
+    },
+    edit: {
+      editButtonContent: '<i class="ion-edit"></i>',
+      saveButtonContent: '<i class="ion-checkmark"></i>',
+      cancelButtonContent: '<i class="ion-close"></i>',
+  
+    },
+    delete: {
+      deleteButtonContent: '<i class="ion-trash-a"></i>',
+
+    }, 
   };
 
 }

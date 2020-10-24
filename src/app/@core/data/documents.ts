@@ -5,11 +5,13 @@ export class Documents{
     name: string;
     docCode: string;
     status: string;
+    docType: string;
     issueAuthority: string;
     createDate: Date;
-    department: number;
+    department: string;
 }
 
 export abstract class DocumentsData {
     abstract getDocuments(): Observable<Documents[]>;
+    abstract addDocuments(documents:Documents): Observable<Documents>;
 }

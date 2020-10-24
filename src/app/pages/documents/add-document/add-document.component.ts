@@ -13,10 +13,11 @@ import { DocumentsService } from '../../../@core/mock/documents.service';
 export class AddDocumentComponent implements OnInit, OnDestroy {
   private destroy$: Subject<void> = new Subject <void>();
   departments: Department[];
+  documents = new Documents();
 
   constructor(private deptService: DepartmentData,
               private docService: DocumentsData) { }
- documents = new Documents()
+ 
   ngOnInit(): void {
     this.deptService.getDepartments()
       .pipe(takeUntil(this.destroy$))

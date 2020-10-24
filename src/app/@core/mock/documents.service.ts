@@ -22,7 +22,7 @@ export class DocumentsService extends DocumentsData {
       let apiUrl = 'http://localhost:4200/api/documents/'
       return this.http.get(apiUrl,httpOptions)
   }
-  addDocuments(documents:Documents): Observable<any>{
+  addDocuments(documents:Documents): Observable<Documents>{
       let apiUrl = 'http://localhost:4200/api/documents/'
       return this.http.post<Documents>(apiUrl,documents,httpOptions)
   }

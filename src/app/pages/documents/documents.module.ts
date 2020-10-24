@@ -6,6 +6,7 @@ import { NbActionsModule, NbButtonModule, NbCardModule, NbCheckboxModule, NbDate
 import { Ng2SmartTableModule } from 'ng2-smart-table';
 import { DocumentRoutingModule } from './document-routing.module';
 import { ThemeModule } from '../../@theme/theme.module';
+import { FormsModule } from '@angular/forms';
 
 
 
@@ -24,6 +25,7 @@ import { ThemeModule } from '../../@theme/theme.module';
     NbUserModule,
     NbDatepickerModule,
     NbSelectModule,
+    FormsModule,
 
   ],
 })

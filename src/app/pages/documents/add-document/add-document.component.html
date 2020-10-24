@@ -7,56 +7,55 @@
             <div class="form-group row">
                 <label for="inputFname3" class="label col-sm-3 form-control-label">Document Name</label>
                 <div class="col-sm-9">
-                  <input type="fname" nbInput fullWidth id="inputFname3" placeholder="document name">
+                  <input type="fname" nbInput [(ngModel)]='documents.name' name='name' fullWidth id="inputFname3" placeholder="document name">
                 </div>
               </div>
               <div class="form-group row">
                 <label for="inputLname3" class="label col-sm-3 form-control-label">Document Code</label>
                 <div class="col-sm-9">
-                  <input type="lname" nbInput fullWidth id="inputLname3" placeholder="document code">
+                  <input type="lname" nbInput  [(ngModel)]='documents.docCode' name='docCode' fullWidth id="inputLname3" placeholder="document code">
                 </div>
               </div>
               <div class="form-group row">
                 <label for="inputLname3" class="label col-sm-3 form-control-label">Status</label>
                 <div class="col-sm-9">
-                  <input type="lname" nbInput fullWidth id="inputLname3" placeholder="status">
+                  <input type="lname" nbInput  [(ngModel)]='documents.status' name='status' fullWidth id="inputLname3" placeholder="status">
                 </div>
               </div>
               <div class="form-group row">
                 <label for="inputLname3" class="label col-sm-3 form-control-label">Document Type</label>
                 <div class="col-sm-9">
-                  <input type="lname" nbInput fullWidth id="inputLname3" placeholder="document type">
+                  <input type="lname" nbInput  [(ngModel)]='documents.docType' name='issueAuthority' fullWidth id="inputLname3" placeholder="document type">
                 </div>
               </div>
               <div class="form-group row">
                 <label for="inputAddress" class="label col-sm-3 form-control-label">Issued Authority</label>
                 <div class="col-sm-9">
-                  <input type="address" nbInput fullWidth id="inputAddress3" placeholder="issued authority">
+                  <input type="address" nbInput  [(ngModel)]='documents.issueAuthority' name='issueAuthority' fullWidth id="inputAddress3" placeholder="issued authority">
                 </div>
               </div>
               <div class="form-group row">
                 <label for="inputPhone3" class="label col-sm-3 form-control-label">Added Date</label>
                 <div class="col-sm-9">
-                    <input nbInput placeholder="Pick Date" [nbDatepicker]="dateTimePicker">
-                    <nb-datepicker #dateTimePicker></nb-datepicker>
+                    <input nbInput type="date" [(ngModel)]='documents.createDate' name='createDate' placeholder="Pick a Date" >
                 </div>
               </div>
             <div class="form-group row">
               <label for="inputEmail3" class="label col-sm-3 form-control-label">Add To</label>
               <div class="col-sm-9">
-                <nb-select placeholder="Select Department" [(selected)]="departments">
-                    <nb-option value="">Management</nb-option>
-                    <nb-option value="0">HR</nb-option>
-                    <nb-option value="1">Accounting and Finance</nb-option>
-                    <nb-option value="2">IT</nb-option>
-                    <nb-option value="3">Marketing</nb-option>
+                <nb-select placeholder="Select Department">
+                    <nb-option value="Management">Management</nb-option>
+                    <nb-option value="HR">HR</nb-option>
+                    <nb-option value="Accounting">Accounting and Finance</nb-option>
+                    <nb-option value="IT">IT</nb-option>
+                    <nb-option value="Marketing">Marketing</nb-option>
                 </nb-select>
               </div>
             </div>
             
             <div class="row">
               <div class="col-md-3 offset-md-3">
-                <button nbButton hero status="success">Save</button>
+                <button nbButton hero status="success"(click)='onClick()'>Save</button>
               </div>
               <div class="col-md-3 offset-md-3">
                  <button nbButton hero status="warning">Cancel</button>
