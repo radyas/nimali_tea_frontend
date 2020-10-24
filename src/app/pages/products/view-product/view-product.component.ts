@@ -39,8 +39,8 @@ export class ViewProductComponent implements OnInit {
     },
     actions: {
       add: false,
-      edit: false,
-      delete: false,
+      // edit: false,
+      // delete: false,
     },
   };
 }
