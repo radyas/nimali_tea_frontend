@@ -22,6 +22,14 @@ export class ViewCustomerComponent implements OnInit {
   }
 
   settings = {
+    edit: {
+      editButtonContent: '<i class="nb-edit"></i>',
+      saveButtonContent: '<i class="nb-checkmark"></i>',
+      cancelButtonContent: '<i class="nb-close"></i>',
+    },
+    delete: {
+      deleteButtonContent: '<i class="nb-trash"></i>',
+    },
     columns: {
       id: {
         title: 'ID',
@@ -41,8 +49,8 @@ export class ViewCustomerComponent implements OnInit {
     },
     actions: {
       add: false,
-      edit: false,
-      delete: false,
+      //edit: false,
+      //delete: false,
     },
   };
 

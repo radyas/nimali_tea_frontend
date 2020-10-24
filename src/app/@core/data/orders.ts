@@ -10,6 +10,8 @@ export class Orders {
     shipAddress: string;
     product: Products;
     customer: Customer;
+    customer_id: string;
+    product_id:string;
     date: string;
     // constructor(id, brand, weight, shipaddress) {
     //   this.id = id;

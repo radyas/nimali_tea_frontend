@@ -23,6 +23,14 @@ export class ViewOrdersComponent implements OnInit {
   }
 
   settings = {
+    edit: {
+      editButtonContent: '<i class="nb-edit"></i>',
+      saveButtonContent: '<i class="nb-checkmark"></i>',
+      cancelButtonContent: '<i class="nb-close"></i>',
+    },
+    delete: {
+      deleteButtonContent: '<i class="nb-trash"></i>',
+    },
     columns: {
       id: {
         title: 'ID'
