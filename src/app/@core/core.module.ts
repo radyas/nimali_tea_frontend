@@ -14,6 +14,8 @@ import { UserService } from './mock/users.service';
 import { MockDataModule } from './mock/mock-data.module';
 import { DepartmentData } from './data/department';
 import { DepartmentService } from './mock/department.service';
+import { DocumentsData } from './data/documents';
+import { DocumentsService } from './mock/documents.service';
 import { CustomerData } from './data/customer';
 import { CustomerService } from './mock/customer.service';
 import { OrdersData } from './data/orders';
@@ -42,6 +44,7 @@ const socialLinks = [
 const DATA_SERVICES = [
   { provide: UserData, useClass: UserService },
   { provide: DepartmentData, useClass: DepartmentService },
+  { provide: DocumentsData, useClass: DocumentsService },
   { provide: CustomerData, useClass: CustomerService },
   { provide: OrdersData, useClass: OrdersService },
   { provide: ProductsData, useClass: ProductsService },
