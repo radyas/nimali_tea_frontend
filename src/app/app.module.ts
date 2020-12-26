@@ -20,7 +20,8 @@ import {
   NbToastrModule,
   NbWindowModule,
 } from '@nebular/theme';
-import {NbAuthModule, NbPasswordAuthStrategy} from '@nebular/auth';
+import {NbAuthModule, NbAuthSimpleToken, NbPasswordAuthStrategy} from '@nebular/auth';
+import {AuthGuard} from "./auth-guard.service";
 
 @NgModule({
   declarations: [AppComponent],
@@ -55,21 +56,32 @@ import {NbAuthModule, NbPasswordAuthStrategy} from '@nebular/auth';
               failure: null, // stay on the same page
             },
           },
-          register: {
-            endpoint: '/api/auth/register',
+          logout: {
+            endpoint: '/api/auth/token/logout/',
             method: 'post',
           },
-          logout: {
-            endpoint: '/auth/token/logout/',
-            method: 'post',
+          token: {
+            class: NbAuthSimpleToken,
+            key: 'auth_token',
           },
         }),
-        
+
       ],
-      forms: {},
+      forms: {
+        login: {
+          showMessages: {
+            success: true,
+            error: true,
+          },
+          register: false,
+        },
+      },
     }),
   ],
   bootstrap: [AppComponent],
+  providers: [
+    AuthGuard,
+  ],
 })
 export class AppModule {
 }

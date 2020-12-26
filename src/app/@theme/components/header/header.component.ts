@@ -6,6 +6,7 @@ import { LayoutService } from '../../../@core/utils';
 import { map, takeUntil } from 'rxjs/operators';
 import { Subject, Observable } from 'rxjs';
 import { RippleService } from '../../../@core/utils/ripple.service';
+import {NbAuthService} from '@nebular/auth';
 
 @Component({
   selector: 'ngx-header',
@@ -58,6 +59,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
     private layoutService: LayoutService,
     private breakpointService: NbMediaBreakpointsService,
     private rippleService: RippleService,
+    private authService: NbAuthService,
   ) {
     this.materialTheme$ = this.themeService.onThemeChange()
       .pipe(map(theme => {
@@ -67,9 +69,11 @@ export class HeaderComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit() {
+    let token;
+    this.authService.getToken().subscribe((auth: any) => token = auth.token);
     this.currentTheme = this.themeService.currentTheme;
 
-    this.userService.getCurrentUser()
+    this.userService.getCurrentUser(token)
       .pipe(takeUntil(this.destroy$))
       .subscribe((user: any) => this.user = user);
 
