@@ -1,5 +1,5 @@
 import { Observable } from 'rxjs';
-import {Department} from "./department";
+import {Department} from './department';
 
 export interface Group {
   url: string;

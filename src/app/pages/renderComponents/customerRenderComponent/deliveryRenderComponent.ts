@@ -18,8 +18,7 @@ export class DeliveryRenderComponent implements ViewCell, OnInit {
   @Input() rowData: Delivery;
 
   ngOnInit() {
-    console.log(this.rowData)
-    this.renderValue = this.rowData.provider.name.toString()
+    this.renderValue = this.rowData.provider.name.toString();
   }
 
 }

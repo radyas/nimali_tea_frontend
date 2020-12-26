@@ -24,6 +24,7 @@ export class UserService extends UserData {
   getCurrentUser(): Observable<any> {
     const apiUrl = 'http://localhost:4200/api/authUser/';
     return this.http.get(apiUrl);
+  }
 
   addUser(user: Employee): Observable<any> {
     user.username = user.email;
