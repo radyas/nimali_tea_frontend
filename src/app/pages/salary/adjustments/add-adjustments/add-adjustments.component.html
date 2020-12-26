@@ -1,7 +1,7 @@
 <div class="row justify-content-center">
   <div class="col-md-8">
     <nb-card>
-      <nb-card-header>Mark Attendence</nb-card-header>
+      <nb-card-header>Add Adjustments</nb-card-header>
       <nb-card-body>
         <form class="form-horizontal">
           <br>
@@ -14,10 +14,9 @@
             </div>
           </div>
           <div class="form-group row">
-            <label for="date" class="label col-sm-3 form-control-label">Date</label>
+            <label for="description" class="label col-sm-3 form-control-label">Description</label>
             <div class="col-sm-9">
-              <input nbInput id="date" placeholder="Date" [nbDatepicker]="dateTimePicker">
-              <nb-datepicker #dateTimePicker></nb-datepicker>
+              <input type="text" nbInput fullWidth id="description" placeholder="Description">
             </div>
           </div>
           <div class="form-group row">
@@ -26,25 +25,26 @@
               <div class="form-group row">
                 <div class="col-5">
                   <nb-radio-group id="type" [(ngModel)]="selectedOption">
-                    <nb-radio value="present">Present</nb-radio>
+                    <nb-radio value="addition">Addition</nb-radio>
                   </nb-radio-group>
                 </div>
                 <div class="col-5">
-                    <nb-radio value="absent">Absent</nb-radio>
+                  <nb-radio value="deduction">Deduction</nb-radio>
                 </div>
               </div>
             </div>
           </div>
           <div class="form-group row">
-            <label for="intime" class="label col-sm-3 form-control-label">In Time</label>
+            <label for="date" class="label col-sm-3 form-control-label">Date</label>
             <div class="col-sm-9">
-              <input type="text" nbInput fullWidth id="intime" placeholder="In Time">
+              <input nbInput id="date" placeholder="Date" [nbDatepicker]="dateTimePicker">
+              <nb-datepicker #dateTimePicker></nb-datepicker>
             </div>
           </div>
           <div class="form-group row">
-            <label for="outtime" class="label col-sm-3 form-control-label">Out Time</label>
+            <label for="amount" class="label col-sm-3 form-control-label">Amount</label>
             <div class="col-sm-9">
-              <input type="text" nbInput fullWidth id="outtime" placeholder="Out Time">
+              <input type="text" nbInput fullWidth id="amount" placeholder="Amount">
             </div>
           </div>
           <br>

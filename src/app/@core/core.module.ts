@@ -14,6 +14,12 @@ import { UserService } from './mock/users.service';
 import { MockDataModule } from './mock/mock-data.module';
 import { DepartmentData } from './data/department';
 import { DepartmentService } from './mock/department.service';
+import {AdjustmentsData} from './data/adjustments';
+import {AdjustmentsService} from './mock/adjustments.service';
+import {SalaryData} from './data/salary';
+import {SalaryService} from './mock/salary.service';
+import {AttendanceData} from './data/attendance';
+import {AttendanceService} from './mock/attendance.service';
 import { DocumentsData } from './data/documents';
 import { DocumentsService } from './mock/documents.service';
 import { CustomerData } from './data/customer';
@@ -48,6 +54,9 @@ const DATA_SERVICES = [
   { provide: CustomerData, useClass: CustomerService },
   { provide: OrdersData, useClass: OrdersService },
   { provide: ProductsData, useClass: ProductsService },
+  { provide: AdjustmentsData, useClass: AdjustmentsService},
+  { provide: SalaryData, useClass: SalaryService},
+  { provide: AttendanceData, useClass: AttendanceService},
 ];
 
 export class NbSimpleRoleProvider extends NbRoleProvider {

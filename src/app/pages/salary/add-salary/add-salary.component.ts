@@ -4,15 +4,14 @@ import {User, UserData} from '../../../@core/data/users';
 import {takeUntil} from 'rxjs/operators';
 
 @Component({
-  selector: 'ngx-add-attendance',
-  templateUrl: './add-attendance.component.html',
-  styleUrls: ['./add-attendance.component.scss'],
+  selector: 'ngx-add-salary',
+  templateUrl: './add-salary.component.html',
+  styleUrls: ['./add-salary.component.scss'],
 })
-export class AddAttendanceComponent implements OnInit, OnDestroy {
+export class AddSalaryComponent implements OnInit, OnDestroy {
   private destroy$: Subject<void> = new Subject<void>();
   selectedItem: any;
   users: User[];
-  selectedOption: any;
   constructor(private userService: UserData) { }
 
   ngOnInit(): void {

@@ -39,6 +39,16 @@ const routes: Routes = [{
         .then(m => m.DocumentsModule),
     },
     {
+      path: 'attendance',
+      loadChildren: () => import('./attendance/attendance.module')
+        .then(m => m.AttendanceModule),
+    },
+    {
+      path: 'salary',
+      loadChildren: () => import('./salary/salary.module')
+        .then(m => m.SalaryModule),
+    },
+    {
       path: '',
       redirectTo: 'home',
       pathMatch: 'full',

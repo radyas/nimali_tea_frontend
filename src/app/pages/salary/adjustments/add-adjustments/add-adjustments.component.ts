@@ -1,14 +1,16 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
+import {Adjustments} from '../../../../@core/data/adjustments';
 import {Subject} from 'rxjs';
-import {User, UserData} from '../../../@core/data/users';
+import {AdjustmentsService} from '../../../../@core/mock/adjustments.service';
 import {takeUntil} from 'rxjs/operators';
+import {User, UserData} from '../../../../@core/data/users';
 
 @Component({
-  selector: 'ngx-add-attendance',
-  templateUrl: './add-attendance.component.html',
-  styleUrls: ['./add-attendance.component.scss'],
+  selector: 'ngx-add-adjustments',
+  templateUrl: './add-adjustments.component.html',
+  styleUrls: ['./add-adjustments.component.scss'],
 })
-export class AddAttendanceComponent implements OnInit, OnDestroy {
+export class AddAdjustmentsComponent implements OnInit, OnDestroy {
   private destroy$: Subject<void> = new Subject<void>();
   selectedItem: any;
   users: User[];
@@ -20,8 +22,9 @@ export class AddAttendanceComponent implements OnInit, OnDestroy {
       .pipe(takeUntil(this.destroy$))
       .subscribe(user => this.users = user);
   }
-  ngOnDestroy() {
+  ngOnDestroy(): void {
     this.destroy$.next();
     this.destroy$.complete();
   }
+
 }

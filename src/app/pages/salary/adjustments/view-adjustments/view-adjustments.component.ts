@@ -1,39 +1,41 @@
 import { Component, OnInit } from '@angular/core';
-import {AttendanceData} from '../../../@core/data/attendance';
+import {AdjustmentsData} from '../../../../@core/data/adjustments';
 import {LocalDataSource} from 'ng2-smart-table';
 
 @Component({
-  selector: 'ngx-view-attendance',
-  templateUrl: './view-attendance.component.html',
-  styleUrls: ['./view-attendance.component.scss'],
+  selector: 'ngx-view-adjustments',
+  templateUrl: './view-adjustments.component.html',
+  styleUrls: ['./view-adjustments.component.scss'],
 })
-export class ViewAttendanceComponent implements OnInit {
+export class ViewAdjustmentsComponent implements OnInit {
   data: LocalDataSource;
-  constructor(private attservice: AttendanceData) { }
+  constructor(private adjservice: AdjustmentsData) { }
 
+  // @ts-ignore
   ngOnInit(): void {
     this.data = new LocalDataSource();
-    this.attservice.getAttendance()
+    this.adjservice.getAdjustments()
       .subscribe(document => {
         this.data.load(document);
       });
   }
+
   settings = {
     columns: {
       id: {
         title: 'ID',
       },
-      date: {
-        title: 'Date',
-      },
       type: {
         title: 'Type',
       },
-      inTime: {
-        title: 'In Time',
+      amount: {
+        title: 'Amount',
       },
-      outTime: {
-        title: 'Out Time',
+      date: {
+        title: 'Date',
+      },
+      description: {
+        title: 'Description',
       },
       employee: {
         title: 'Employee',
@@ -45,5 +47,4 @@ export class ViewAttendanceComponent implements OnInit {
         delete: false,
       },
   };
-
 }
