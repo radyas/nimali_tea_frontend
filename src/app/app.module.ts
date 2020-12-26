@@ -6,7 +6,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
-import { HttpClientModule } from '@angular/common/http';
+import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import { CoreModule } from './@core/core.module';
 import { ThemeModule } from './@theme/theme.module';
 import { AppComponent } from './app.component';
@@ -21,7 +21,8 @@ import {
   NbWindowModule,
 } from '@nebular/theme';
 import {NbAuthModule, NbAuthSimpleToken, NbPasswordAuthStrategy} from '@nebular/auth';
-import {AuthGuard} from "./auth-guard.service";
+import {AuthGuard} from './auth-guard.service';
+import {TokenInterceptor} from './auth.interceptor';
 
 @NgModule({
   declarations: [AppComponent],
@@ -59,6 +60,7 @@ import {AuthGuard} from "./auth-guard.service";
           logout: {
             endpoint: '/api/auth/token/logout/',
             method: 'post',
+            requireValidToken: true,
           },
           token: {
             class: NbAuthSimpleToken,
@@ -81,6 +83,11 @@ import {AuthGuard} from "./auth-guard.service";
   bootstrap: [AppComponent],
   providers: [
     AuthGuard,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: TokenInterceptor,
+      multi: true,
+    },
   ],
 })
 export class AppModule {
