@@ -7,6 +7,8 @@ import { OrdersService } from './orders.service';
 import {AdjustmentsService} from './adjustments.service';
 import {SalaryService} from './salary.service';
 import {AttendanceService} from './attendance.service';
+import { ProviderService } from './provider.service';
+import { DeliveryService } from './delivery.service';
 
 const SERVICES = [
   UserService,
@@ -14,6 +16,8 @@ const SERVICES = [
   AdjustmentsService,
   SalaryService,
   AttendanceService,
+  ProviderService,
+  DeliveryService,
 ];
 
 @NgModule({
