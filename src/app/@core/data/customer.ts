@@ -1,6 +1,6 @@
 import { Observable } from 'rxjs';
 
-export class Customer{
+export class Customer {
     id: number;
     name: string;
     address: string;
@@ -14,7 +14,6 @@ export class Customer{
     //     this.phone = phone;
     //     this.email = email;
     // }
-    
 }
 
 export abstract class CustomerData {

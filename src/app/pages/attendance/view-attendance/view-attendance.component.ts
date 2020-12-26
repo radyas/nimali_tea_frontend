@@ -22,21 +22,27 @@ export class ViewAttendanceComponent implements OnInit {
     columns: {
       id: {
         title: 'ID',
+        filter: false,
       },
       date: {
         title: 'Date',
+        filter: false,
       },
       type: {
         title: 'Type',
+        filter: false,
       },
       inTime: {
         title: 'In Time',
+        filter: false,
       },
       outTime: {
         title: 'Out Time',
+        filter: false,
       },
       employee: {
         title: 'Employee',
+        filter: false,
       },
       },
       actions: {

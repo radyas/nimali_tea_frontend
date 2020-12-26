@@ -7,7 +7,7 @@
             <div class="form-group row">
                 <label for="inputpid3" class="label col-sm-3 form-control-label">Product</label>
                 <div class="col-sm-9">
-                  <nb-select placeholder="Select Product" >
+                  <nb-select [(ngModel)]="orders.product" name="product"placeholder="Select Product" >
                         <nb-option *ngFor="let product of products" value="{{product.id}}">{{product.name}}</nb-option>
                     </nb-select>
                 </div>
@@ -15,7 +15,7 @@
               <div class="form-group row">
                 <label for="inputcid3" class="label col-sm-3 form-control-label">Customer</label>
                 <div class="col-sm-9">
-                  <nb-select placeholder="Select Customer" >
+                  <nb-select [(ngModel)]="orders.customer" name="customer"placeholder="Select Customer" >
                     <nb-option *ngFor="let customer of customers" value="{{customer.id}}">{{customer.name}}</nb-option>
                 </nb-select>
                 </div>
@@ -23,19 +23,19 @@
               <div class="form-group row">
                 <label for="inputBrand" class="label col-sm-3 form-control-label">Brand</label>
                 <div class="col-sm-9">
-                    <nb-select placeholder="Select Brand" [(selected)]="selectedItem">
-                        <nb-option value="">Brand A</nb-option>
-                        <nb-option value="0">Brand B</nb-option>
-                        <nb-option value="1">Brand C</nb-option>
-                        <nb-option value="2">Brand D</nb-option>
-                        <nb-option value="3">Brand E</nb-option>
+                    <nb-select [(ngModel)]="orders.brand" name="brand"placeholder="Select Brand" >
+                        <nb-option  value="Brand A"> Brand A</nb-option>
+                        <nb-option  value="Brand B">Brand B</nb-option>
+                        <nb-option  value="Brand C">Brand C</nb-option>
+                        <nb-option  value="Brand D">Brand D</nb-option>
+                        <nb-option  value="Brand E">Brand E</nb-option>
                     </nb-select>
                 </div>
               </div>
               <div class="form-group row">
                 <label for="inputWeight3" class="label col-sm-3 form-control-label">Weight</label>
                 <div class="col-sm-9">
-                  <input type="number" nbInput fullWidth id="inputWeight3" placeholder="weight">
+                  <input type="text" nbInput [(ngModel)]="orders.weight" name="weight" fullWidth id="inputWeight3"  placeholder="weight">
                 </div>
               </div>
             <div class="form-group row">
@@ -48,16 +48,16 @@
             <div class="form-group row">
                 <label for="inputAddress3" class="label col-sm-3 form-control-label">Shipping Address</label>
                 <div class="col-sm-9">
-                  <input type="text" nbInput fullWidth id="inputAddress3" placeholder="shipping address">
+                  <input type="text" nbInput [(ngModel)]="orders.shipAddress" name="shipAddress" fullWidth id="inputAddress3" placeholder="shipping address">
                 </div>
               </div>
 
             <div class="row">
               <div class="col-md-3 offset-md-3">
-                <button nbButton hero status="success">Submit</button>
+                <button nbButton hero status="success"(click)='onClick()'>Submit</button>
               </div>
               <div class="col-md-3 offset-md-3">
-                 <button nbButton hero status="warning">Cancel</button>
+                 <button nbButton hero status="warning"(click)='onClickCancel()'>Cancel</button>
               </div>
             </div>
           </form>
@@ -65,4 +65,3 @@
       </nb-card>
     </div>
   </div>
-

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {NbToastrService} from "@nebular/theme";
+import {Department, DepartmentData} from "../../../@core/data/department";
 
 @Component({
   selector: 'ngx-add-department',
@@ -7,9 +9,29 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AddDepartmentComponent implements OnInit {
 
-  constructor() { }
+  department  = new Department();
+
+  constructor(private deptService: DepartmentData, private toastrService: NbToastrService) { }
 
   ngOnInit(): void {
+  }
+
+  onClick() {
+    this.deptService.addDepartment(this.department).subscribe(dept => {
+      console.log(dept);
+      this.showToast('top-right');
+      this.onClickCancel();
+    });
+  }
+  onClickCancel() {
+    this.department = new Department();
+
+  }
+  showToast(position) {
+    this.toastrService.show(
+      'Department added successfully',
+      `Department`,
+      { position , status: 'success' } );
   }
 
 }

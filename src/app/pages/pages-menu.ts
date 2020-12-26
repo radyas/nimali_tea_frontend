@@ -176,4 +176,38 @@ export const MENU_ITEMS: NbMenuItem[] = [
       },
     ],
   },
+     {
+    title: 'Manage Warehouse',
+    icon: {
+      icon: 'luggage-cart',
+      pack: 'font-awesome',
+    },
+    children: [
+      {
+        title: 'Add Warehouse',
+        link: '/warehouses/add',
+      },
+      {
+        title: 'View Warehouses',
+        link: '/warehouses/view',
+      },
+    ],
+  },
+  {
+    title: 'Manage Supplier',
+    icon: {
+      icon: 'truck',
+      pack: 'font-awesome',
+    },
+    children: [
+      {
+        title: 'Add Supplier',
+        link: '/supplier/add',
+      },
+      {
+        title: 'View Supplier',
+        link: '/supplier/view',
+      },
+    ],
+  }
 ];

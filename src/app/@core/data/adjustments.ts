@@ -11,4 +11,5 @@ export class Adjustments {
 
 export abstract class AdjustmentsData {
   abstract getAdjustments(): Observable<Adjustments[]>;
+  abstract addAdjustment(adjustment: Adjustments): Observable<Adjustments>;
 }

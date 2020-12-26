@@ -20,6 +20,7 @@ import {
   NbToastrModule,
   NbWindowModule,
 } from '@nebular/theme';
+import { FormsModule } from '@angular/forms';
 import {NbAuthModule, NbAuthSimpleToken, NbPasswordAuthStrategy} from '@nebular/auth';
 import {AuthGuard} from './auth-guard.service';
 import {TokenInterceptor} from './auth.interceptor';
@@ -33,7 +34,7 @@ import {TokenInterceptor} from './auth.interceptor';
     AppRoutingModule,
 
     ThemeModule.forRoot(),
-
+    FormsModule,
     NbSidebarModule.forRoot(),
     NbMenuModule.forRoot(),
     NbDatepickerModule.forRoot(),

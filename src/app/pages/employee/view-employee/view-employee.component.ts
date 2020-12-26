@@ -14,8 +14,8 @@ export class ViewEmployeeComponent implements OnInit {
     this.data = new LocalDataSource();
 
     this.userService.getUsers().subscribe(data => {
-      this.data.load(data)
-    })
+      this.data.load(data);
+    });
    }
 
   ngOnInit(): void {
@@ -24,30 +24,42 @@ export class ViewEmployeeComponent implements OnInit {
   settings = {
     columns: {
       first_name: {
-        title: 'First Name'
+        title: 'First Name',
       },
       last_name: {
-        title: 'Last Name'
+        title: 'Last Name',
       },
       email: {
-        title: 'Email'
+        title: 'Email',
       },
       phone: {
-        title: 'Phone Number'
+        title: 'Phone Number',
       },
       nic: {
-        title: 'NIC'
+        title: 'NIC',
       },
       dob: {
-        title: 'Date of Birth'
+        title: 'Date of Birth',
       },
     },
     actions: {
       add: false,
       edit: false,
-      delete: false,
-    }
+      delete: {
+        deleteButtonContent: '<nb-icon icon="trash" pack="font-awesome"></nb-icon>',
+        confirmDelete: true,
+      },
+    },
   };
+
+  onDeleteConfirm(event): void {
+    if (window.confirm('Are you sure you want to delete?')) {
+      console.log(event);
+      event.confirm.resolve();
+    } else {
+      event.confirm.reject();
+    }
+  }
 
 }
  

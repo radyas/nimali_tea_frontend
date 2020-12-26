@@ -2,6 +2,7 @@ import {Component, OnDestroy, OnInit} from '@angular/core';
 import {Subject} from 'rxjs';
 import {User, UserData} from '../../../@core/data/users';
 import {takeUntil} from 'rxjs/operators';
+import {Attendance, AttendanceData} from '../../../@core/data/attendance';
 
 @Component({
   selector: 'ngx-add-attendance',
@@ -13,7 +14,8 @@ export class AddAttendanceComponent implements OnInit, OnDestroy {
   selectedItem: any;
   users: User[];
   selectedOption: any;
-  constructor(private userService: UserData) { }
+  attendance = new Attendance();
+  constructor(private userService: UserData, private attendanceService: AttendanceData) { }
 
   ngOnInit(): void {
     this.userService.getUsers()
@@ -23,5 +25,8 @@ export class AddAttendanceComponent implements OnInit, OnDestroy {
   ngOnDestroy() {
     this.destroy$.next();
     this.destroy$.complete();
+  }
+  onClick() {
+    this.attendanceService.addAttendance(this.attendance).subscribe(att => console.log(this.attendance));
   }
 }

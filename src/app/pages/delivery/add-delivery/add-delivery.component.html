@@ -1,1 +1,124 @@
-<p>add-delivery works!</p>
+<div class="row justify-content-center">
+  <div class="col-md-8">
+    <nb-card>
+      <nb-card-header>
+        <div class="row justify-content-between">
+          <div class="col">Add Delivery</div>
+          <button (click)="showToast('top-right')" nbButton hero status="info">
+            Demo Data
+          </button>
+        </div>
+      </nb-card-header>
+      <nb-card-body>
+        <form class="form-horizontal">
+          <div class="form-group row">
+            <label for="inputpid3" class="label col-sm-3 form-control-label"
+              >Order</label
+            >
+            <div class="col-sm-9">
+              <nb-select placeholder="Select the order"
+              [(ngModel)]="neworder.id"
+                name="order">
+                <nb-option
+                  *ngFor="let order of orders"
+                  value="{{ order.id }}"
+                  >{{ order.id }}</nb-option>
+              </nb-select>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="inputpid3" class="label col-sm-3 form-control-label"
+              >Provider</label
+            >
+            <div class="col-sm-9">
+              <nb-select placeholder="Select the provider"
+              [(ngModel)]="newprovider.id"
+                name="provider">
+              
+                <nb-option
+                  *ngFor="let provider of providers"
+                  value="{{ provider.id }}"
+                  >{{ provider.name }}</nb-option
+                >
+              </nb-select>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="inputDate3" class="label col-sm-3 form-control-label"
+              >Pick Up Date</label
+            >
+            <div class="col-sm-9">
+              <input
+                nbInput
+                placeholder="Pick Date"
+                [(ngModel)]="newdelivery.date"
+                name="date"
+                [nbDatepicker]="dateTimePicker"
+              />
+              <nb-datepicker #dateTimePicker></nb-datepicker>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="inputBrand" class="label col-sm-3 form-control-label"
+              >Status</label
+            >
+            <div class="col-sm-9">
+              <nb-select
+              [(ngModel)]="newdelivery.status"
+                name="status"
+                placeholder="Select Status"
+                [(selected)]="selectedItem"
+              >
+                <nb-option value="0">Pending</nb-option>
+                <nb-option value="1">Picked Up</nb-option>
+                <nb-option value="2">Delivered</nb-option>
+                <nb-option value="3">Dispute</nb-option>
+              </nb-select>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="inputWeight3" class="label col-sm-3 form-control-label"
+              >Package Weight</label
+            >
+            <div class="col-sm-9">
+              <input
+                type="number"
+                nbInput
+                [(ngModel)]="newdelivery.weight"
+                name="weight"
+                fullWidth
+                id="inputWeight3"
+                placeholder="Package Weight"
+              />
+            </div>
+          </div>
+
+          <div class="form-group row">
+            <label for="inputAddress3" class="label col-sm-3 form-control-label"
+              >Delivery Address</label
+            >
+            <div class="col-sm-9">
+              <textarea
+                type="text"
+                nbInput
+                [(ngModel)]="newdelivery.address"
+                fullWidth
+                name="address"
+                id="inputAddress3"
+                placeholder="Delivery address"
+              ></textarea>
+            </div>
+          </div>
+          <div class="row justify-content-center">
+            <div class="col-md-3">
+              <button (click) = "addDelivery()" nbButton hero status="success">Add Delivery</button>
+            </div>
+            <div class="col-md-3">
+              <button nbButton hero status="warning">Back</button>
+            </div>
+          </div>
+        </form>
+      </nb-card-body>
+    </nb-card>
+  </div>
+</div>

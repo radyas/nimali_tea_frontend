@@ -1,7 +1,12 @@
 import {Injectable} from '@angular/core';
-import {SalaryData} from '../data/salary';
-import {HttpClient} from '@angular/common/http';
+import {Salary, SalaryData} from '../data/salary';
+import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {Observable} from 'rxjs';
+import { environment } from './../../../environments/environment';
+
+const httpOptions = {
+  headers: new HttpHeaders({'Content-Type': 'application/json', 'Authorization': 'Token ' + environment.token}),
+};
 
 @Injectable()
 export class SalaryService extends SalaryData {
@@ -10,6 +15,11 @@ export class SalaryService extends SalaryData {
   }
   getSalary(): Observable<any> {
     const apiUrl = 'http://localhost:4200/api/salary/';
-    return this.http.get(apiUrl);
+    return this.http.get(apiUrl, httpOptions);
+  }
+
+  addSalary(salary: Salary): Observable<Salary> {
+    const apiUrl = 'http://localhost:4200/api/salary/';
+    return this.http.post<Salary>(apiUrl, salary, httpOptions);
   }
 }
